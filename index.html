@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Interval Bureau: Extension 0 | Quiet Den</title>
-  <meta name="description" content="The Interval Bureau: Extension 0 is a ~45-minute branching audio narrative. Navigate a corporate help line that becomes something else. Every choice is logged. Every pause is assessed.">
+  <title>The Interval Bureau: Extension 0 | Quiet Den Games</title>
+  <meta name="description" content="Every choice is logged. Every pause is assessed. A 45-minute branching audio narrative where workplace protocol meets cosmic intrusion. The Interval Bureau is listening.">
   <meta name="theme-color" content="#050608">
   <style>
     :root {
@@ -20,13 +20,11 @@
       --radius-xxl: 32px;
       --shadow-soft: 0 18px 55px rgba(0,0,0,0.65);
       --font-sans: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      --max-width: 1120px;
+      --max-width: 960px;
       --transition-fast: 0.22s ease-out;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -43,7 +41,7 @@
 
     .page-wrap {
       min-height: 100vh;
-      padding: 32px 20px 48px;
+      padding: 32px 20px 40px;
       display: flex;
       justify-content: center;
     }
@@ -54,15 +52,14 @@
       position: relative;
     }
 
-    /* Subtle grid / scanline background */
     main::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.06;
+      opacity: 0.05;
       background-image:
-        linear-gradient(rgba(249,115,22,0.08) 1px, transparent 1px),
+        linear-gradient(rgba(249,115,22,0.06) 1px, transparent 1px),
         linear-gradient(to right, rgba(249,115,22,0.04) 1px, transparent 1px);
       background-size: 0.5px 18px, 18px 0.5px;
       mix-blend-mode: screen;
@@ -74,7 +71,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
     .brand {
@@ -84,7 +81,7 @@
     }
 
     .brand-label {
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--muted);
@@ -102,7 +99,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      font-size: 12px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.14em;
     }
@@ -110,7 +107,7 @@
     nav a {
       color: var(--muted);
       text-decoration: none;
-      padding-bottom: 3px;
+      padding-bottom: 2px;
       border-bottom: 1px solid transparent;
       transition: color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
     }
@@ -121,13 +118,85 @@
       transform: translateY(-1px);
     }
 
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 11px 6px;
+      border-radius: 999px;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(12px);
+      margin-left: auto;
+    }
+
+    .pill span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .hero {
+      padding: 24px 22px 20px;
+      border-radius: var(--radius-xxl);
+      border: 1px solid var(--border-subtle);
+      background:
+        radial-gradient(circle at top left, rgba(249,115,22,0.10), transparent 55%),
+        rgba(4,6,8,0.98);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .hero-main {
+      font-size: 13px;
+      color: #e5e5e5;
+      margin: 0 0 14px;
+      max-width: 680px;
+    }
+
+    .hero-main span {
+      display: block;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
     a.btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 9px 16px 10px;
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       text-decoration: none;
       background: var(--accent);
@@ -159,102 +228,12 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px 7px;
-      border-radius: 999px;
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      border: 1px solid var(--accent-soft);
-      color: var(--accent);
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(12px);
-    }
-
-    .pill span {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(240px, 2.2fr);
-      gap: 32px;
-      padding: 26px 24px 24px;
-      border-radius: var(--radius-xxl);
-      border: 1px solid var(--border-subtle);
-      background:
-        radial-gradient(circle at top left, rgba(249,115,22,0.10), transparent 55%),
-        radial-gradient(circle at top right, rgba(15,23,42,0.60), transparent 65%),
-        rgba(4,6,8,0.98);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.65));
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-    }
-
-    .hero-left {
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .hero-title {
-      font-size: clamp(26px, 4vw, 34px);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin: 0 0 4px;
-      color: var(--text);
-    }
-
-    .hero-subtitle {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0 0 14px;
-      max-width: 520px;
-    }
-
-    .hero-hook {
-      font-size: 12px;
-      color: #e5e5e5;
-      margin: 0 0 18px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
     .hero-meta {
       font-size: 10px;
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 14px;
     }
 
     .hero-meta span strong {
@@ -262,127 +241,20 @@
       font-weight: 500;
     }
 
-    .hero-right {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: stretch;
-      justify-content: flex-end;
-    }
-
-    /* Phone card / key art placeholder */
-    .phone-card {
-      position: relative;
-      width: 100%;
-      max-width: 320px;
-      padding: 14px 14px 16px;
-      border-radius: 24px;
-      background: radial-gradient(circle at top, rgba(249,115,22,0.20), transparent 75%) #020308;
-      border: 1px solid rgba(148,163,253,0.14);
-      box-shadow: 0 24px 90px rgba(0,0,0,0.9);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      overflow: hidden;
-    }
-
-    .phone-label {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .phone-label span:last-child {
-      font-size: 8px;
-      color: var(--accent);
-    }
-
-    .phone-screen {
-      flex: 1;
-      margin-top: 4px;
-      border-radius: 18px;
-      padding: 12px 10px;
-      background:
-        radial-gradient(circle at top, rgba(249,115,22,0.25), transparent 85%),
-        #020309;
-      border: 1px solid rgba(249,115,22,0.16);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 6px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .screen-title {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      opacity: 0.94;
-    }
-
-    .screen-text {
-      font-size: 10px;
-      color: var(--text);
-      opacity: 0.96;
-    }
-
-    .screen-options {
-      font-size: 9px;
-      color: var(--muted);
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      margin-top: 4px;
-    }
-
-    .screen-options span {
-      display: block;
-    }
-
-    .scanline {
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 14px;
-      background: linear-gradient(to bottom, rgba(249,115,22,0.06), transparent);
-      mix-blend-mode: screen;
-      animation: scan 3.6s linear infinite;
-      opacity: 0.38;
-      pointer-events: none;
-    }
-
-    @keyframes scan {
-      0% { top: -14px; }
-      100% { top: 100%; }
-    }
-
-    .notice {
-      font-size: 8px;
-      color: var(--muted);
-      opacity: 0.9;
-    }
-
     .sections {
-      margin-top: 32px;
       display: grid;
-      grid-template-columns: minmax(0, 2.3fr) minmax(260px, 1.7fr);
-      gap: 26px;
+      grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1.6fr);
+      gap: 22px;
       align-items: flex-start;
+      margin-bottom: 24px;
     }
 
     section {
-      margin-bottom: 28px;
+      margin: 0 0 18px;
     }
 
     h2 {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -396,26 +268,15 @@
       color: #d4d4d4;
     }
 
-    ul {
-      margin: 6px 0 8px 16px;
-      padding: 0;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    li {
-      margin-bottom: 4px;
-    }
-
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-      gap: 10px;
-      margin-top: 8px;
+      gap: 8px;
+      margin-top: 4px;
     }
 
     .feature {
-      padding: 9px 10px;
+      padding: 8px 9px;
       border-radius: var(--radius-xl);
       border: 1px solid rgba(148,163,253,0.10);
       background: radial-gradient(circle at top left, var(--accent-soft2), transparent) rgba(6,7,10,0.98);
@@ -432,7 +293,7 @@
     }
 
     .side-card {
-      padding: 12px 11px;
+      padding: 11px 11px 10px;
       border-radius: var(--radius-xl);
       border: 1px solid rgba(148,163,253,0.16);
       background: rgba(3,4,7,0.98);
@@ -464,27 +325,22 @@
       flex-wrap: wrap;
       gap: 8px 16px;
       font-size: 9px;
-      margin: 4px 0 2px;
+      margin: 2px 0;
     }
 
-    .meta-label {
-      color: var(--muted);
-    }
-
-    .meta-value {
-      color: var(--text);
-    }
+    .meta-label { color: var(--muted); }
+    .meta-value { color: var(--text); }
 
     .press-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
       margin-top: 4px;
     }
 
     .press-links a {
       font-size: 9px;
-      padding: 4px 9px;
+      padding: 4px 8px;
       border-radius: 999px;
       border: 1px solid rgba(148,163,253,0.22);
       color: var(--muted);
@@ -501,13 +357,13 @@
     }
 
     footer {
-      margin-top: 36px;
-      padding-top: 12px;
+      margin-top: 18px;
+      padding-top: 10px;
       font-size: 9px;
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 20px;
+      gap: 10px 18px;
       border-top: 1px solid rgba(148,163,253,0.18);
     }
 
@@ -527,22 +383,19 @@
       header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
+      }
+      .pill {
+        margin-left: 0;
       }
       nav {
-        order: 3;
-      }
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-right {
-        justify-content: flex-start;
+        padding-top: 4px;
       }
       .sections {
         grid-template-columns: 1fr;
       }
       .page-wrap {
-        padding: 20px 14px 32px;
+        padding: 20px 14px 28px;
       }
     }
   </style>
@@ -552,8 +405,8 @@
   <main>
     <header>
       <div class="brand">
-        <div class="brand-label">Independent interactive fiction</div>
-        <div class="brand-title">Quiet&nbsp;Den</div>
+        <div class="brand-label">Independent narrative games</div>
+        <div class="brand-title">Quiet Den Games</div>
       </div>
       <div class="pill">
         <span></span>
@@ -561,116 +414,71 @@
       </div>
       <nav>
         <a href="#extension0">Game</a>
-        <a href="#features">Experience</a>
-        <a href="#how-to-play">How to play</a>
+        <a href="#experience">Experience</a>
         <a href="#presskit">Press / Info</a>
         <a href="#about">About</a>
       </nav>
     </header>
 
     <section class="hero" id="extension0">
-      <div class="hero-left">
-        <div class="eyebrow">Now available on itch.io</div>
-        <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
-        <p class="hero-subtitle">
-          A ~45-minute branching audio narrative about a corporate help line that evaluates your breathing, your pauses, and your ability to follow instructions when they stop making sense.
-        </p>
-        <p class="hero-hook">
-          Every choice is logged. Every pause is assessed. The call will be completed. The only question is what it completes into.
-        </p>
-        <div class="hero-ctas">
-          <a class="btn" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
-            Play on itch.io
-          </a>
-          <a class="btn btn-outline" href="#presskit">
-            Press &amp; details
-          </a>
-        </div>
-        <div class="hero-meta">
-          <span><strong>Audio-first.</strong> Minimal visuals: one desk, one phone.</span>
-          <span><strong>Headphones recommended.</strong> Speakers still work.</span>
-          <span><strong>Single sitting.</strong> Built to be finished.</span>
-        </div>
+      <div class="eyebrow">Now available on itch.io</div>
+      <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
+      <p class="hero-main">
+        <span>Every choice is logged. Every pause is assessed.</span>
+        <span>A 45-minute branching audio narrative where workplace protocol meets cosmic intrusion. Navigate strange menus, enforced breathing exercises, and controlled scenarios that bend cause and effect.</span>
+        <span>The Interval Bureau is listening.</span>
+      </p>
+      <div class="hero-ctas">
+        <a class="btn" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
+          Play on itch.io
+        </a>
+        <a class="btn btn-outline" href="#presskit">
+          Press &amp; details
+        </a>
       </div>
-      <div class="hero-right">
-        <div class="phone-card">
-          <div class="phone-label">
-            <span>INTERVAL BUREAU / ASSISTANCE LINE</span>
-            <span>EXT 0</span>
-          </div>
-          <div class="phone-screen">
-            <div>
-              <div class="screen-title">Automated intake / monitored</div>
-              <div class="screen-text">
-                "For compliance review, remain on the line. Do not adjust your breath without instruction."
-              </div>
-              <div class="screen-options">
-                <span>[1] Request human assistance</span>
-                <span>[2] Confirm you are still listening</span>
-                <span>[3] Surrender decision-making authority</span>
-              </div>
-            </div>
-            <div class="notice">
-              Input accepted in the final seconds of each clip. Wrong choices do not end the call. They are annotated.
-            </div>
-            <div class="scanline"></div>
-          </div>
-        </div>
+      <div class="hero-meta">
+        <span><strong>Audio-first.</strong> One desk, one phone, no clutter.</span>
+        <span><strong>Single sitting.</strong> Built to be finished in one go.</span>
+        <span><strong>Comfort warning.</strong> Breath control, surveillance, depersonalization.</span>
       </div>
     </section>
 
     <div class="sections">
       <div>
-        <section id="features">
-          <h2>What it is</h2>
+        <section id="experience">
+          <h2>Experience</h2>
           <p>
-            Extension 0 is a tightly scoped, replayable narrative built to be played in one sitting.
-            You navigate a corporate hotline that slowly abandons its script. The systems are simple.
-            The tension comes from what the line asks of you and how it responds when you hesitate.
+            Extension 0 is focused: a short, contained call that goes wrong in controlled steps.
+            No filler, no grind, just a line that evaluates how you respond when the script fractures.
           </p>
           <div class="feature-grid">
             <div class="feature">
-              <strong>Branching audio narrative</strong>
-              No dialogue trees on screen. Your input is keys and timing. The story lives in the audio.
+              <strong>Branching audio</strong>
+              The story lives in voice, sound design, and your numbered responses.
             </div>
             <div class="feature">
-              <strong>Corporate horror, not gore</strong>
-              Surveillance language, protocol worship, and controlled breathing. Unsettling without cheap jumps.
+              <strong>Corporate horror</strong>
+              Protocol, compliance, and monitoring instead of cheap shock.
             </div>
             <div class="feature">
-              <strong>Minimalist visuals</strong>
-              A single desk. A phone. The dark around it. Enough to frame the call, nothing to distract from it.
+              <strong>Minimalist presentation</strong>
+              Static framing on the phone keeps focus where it belongs: the call.
             </div>
             <div class="feature">
-              <strong>Multiple paths, one file</strong>
-              Different routes reveal different fragments of the Interval Bureau and its "Arbiter".
+              <strong>Multiple paths</strong>
+              Different routes surface different layers of the Interval Bureau.
             </div>
           </div>
         </section>
 
-        <section id="how-to-play">
-          <h2>How to play</h2>
-          <ul>
-            <li>Use number keys to respond to prompts (e.g. press 1, 2, 3).</li>
-            <li>Some inputs only register during the last seconds of a message; the call tells you when.</li>
-            <li>Breathing prompts are <strong>fictional</strong>. Ignore them if they feel uncomfortable.</li>
-            <li>
-              The line tracks how you cooperate, stall, or disobey. Most paths are valid. A few are not.
-            </li>
-          </ul>
-          <p style="font-size:10px;color:var(--muted);margin-top:4px;">
-            Content notes: breath control themes, panic sensations, depersonalization, corporate surveillance, intrusive language. No graphic violence.
-          </p>
-        </section>
-
         <section id="about">
-          <h2>About Quiet Den</h2>
+          <h2>About Quiet Den Games</h2>
           <p>
-            Quiet Den is a solo developer label focused on short, focused interactive experiences:
-            heavy on atmosphere, strict about runtime, honest about what they are.
+            Quiet Den Games is a one-person label making concise, atmospheric interactive work:
+            tight runtimes, deliberate writing, and systems that stay out of the way.
           </p>
           <p>
-            Extension 0 is the first public release in the Interval Bureau setting, with more planned if this one earns it.
+            Extension 0 is the first public release set inside the Interval Bureau, with room to expand if it earns it.
           </p>
         </section>
       </div>
@@ -680,16 +488,19 @@
           <h3>Press &amp; Info</h3>
           <div class="side-label">Key facts</div>
           <div class="meta-row">
-            <div><span class="meta-label">Developer:</span> <span class="meta-value">Quiet Den</span></div>
+            <div><span class="meta-label">Title:</span> <span class="meta-value">The Interval Bureau: Extension 0</span></div>
           </div>
           <div class="meta-row">
-            <div><span class="meta-label">Format:</span> <span class="meta-value">PC (itch.io)</span></div>
+            <div><span class="meta-label">Developer:</span> <span class="meta-value">Quiet Den Games</span></div>
           </div>
           <div class="meta-row">
-            <div><span class="meta-label">Length:</span> <span class="meta-value">~45 minutes per run</span></div>
+            <div><span class="meta-label">Platform:</span> <span class="meta-value">PC via itch.io</span></div>
           </div>
           <div class="meta-row">
-            <div><span class="meta-label">Focus:</span> <span class="meta-value">Audio narrative, minimal input</span></div>
+            <div><span class="meta-label">Length:</span> <span class="meta-value">~45 minutes (single sitting)</span></div>
+          </div>
+          <div class="meta-row">
+            <div><span class="meta-label">Focus:</span> <span class="meta-value">Audio narrative, simple input</span></div>
           </div>
 
           <div class="side-label" style="margin-top:6px;">Contact</div>
@@ -702,35 +513,34 @@
 
           <div class="side-label" style="margin-top:6px;">Assets</div>
           <p>
-            If you need captures: use in-game screenshots of the phone, desk, and environment. Keep them dark, clean, and legible.
+            Use in-game captures of the phone and desk. Keep compositions dark, clean, and text-led.
           </p>
           <div class="press-links">
-            <!-- Replace these href values when you have real files -->
-            <a href="#">Key art (coming soon)</a>
-            <a href="#">Logo (coming soon)</a>
-            <a href="#">Press kit PDF (coming soon)</a>
+            <!-- Replace when ready -->
+            <a href="#">Key art (soon)</a>
+            <a href="#">Logo pack (soon)</a>
+            <a href="#">Press kit PDF (soon)</a>
           </div>
 
           <div class="side-label" style="margin-top:6px;">Credits (short)</div>
           <p>
-            Design, writing, programming, sound design, audio editing: Quiet Den<br>
-            Voice cast &amp; additional assets listed in-game.
+            Design, writing, programming, sound design, audio editing: Quiet Den Games<br>
+            Voice cast and asset attributions listed in-game.
           </p>
         </div>
       </aside>
     </div>
 
     <footer>
-      <div>© <span id="year"></span> Quiet Den. All rights reserved.</div>
-      <div>Built for clarity first: no trackers, no nonsense.</div>
+      <div>© <span id="year"></span> Quiet Den Games. All rights reserved.</div>
+      <div>No trackers.</div>
       <div><a href="mailto:contact@quietdengames.com">Contact</a></div>
-      <div><a href="https://quietdengames.itch.io" target="_blank" rel="noopener">itch.io page</a></div>
+      <div><a href="https://quietdengames.itch.io" target="_blank" rel="noopener">itch.io</a></div>
     </footer>
   </main>
 </div>
 
 <script>
-  // Set current year
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
