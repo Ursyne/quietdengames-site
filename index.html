@@ -15,7 +15,6 @@
       --text: #f5f5f5;
       --muted: #9ca3af;
       --border-subtle: rgba(148,163,253,0.14);
-      --radius-xl: 18px;
       --radius-xxl: 30px;
       --shadow-soft: 0 18px 55px rgba(0,0,0,0.7);
       --font-sans: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -40,7 +39,7 @@
 
     .page-wrap {
       min-height: 100vh;
-      padding: 32px 20px 36px;
+      padding: 32px 20px 32px;
       display: flex;
       justify-content: center;
     }
@@ -70,7 +69,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .brand-title {
@@ -130,14 +129,14 @@
     }
 
     .hero {
-      padding: 22px 22px 18px;
+      padding: 22px 22px 16px;
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
       background:
         radial-gradient(circle at top left, rgba(96,165,250,0.10), transparent 55%),
         rgba(3,6,12,0.98);
       box-shadow: var(--shadow-soft);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       position: relative;
       overflow: hidden;
     }
@@ -221,6 +220,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      margin-bottom: 6px;
     }
 
     .hero-meta span strong {
@@ -228,16 +228,14 @@
       font-weight: 500;
     }
 
-    .sections {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(220px, 1.4fr);
-      gap: 20px;
-      align-items: flex-start;
-      margin-bottom: 18px;
+    .hero-extra {
+      font-size: 9px;
+      color: var(--muted);
+      max-width: 640px;
     }
 
     section {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
     }
 
     h2 {
@@ -255,48 +253,8 @@
       color: #d4d4d4;
     }
 
-    .side-card {
-      padding: 10px 10px 9px;
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148,163,253,0.18);
-      background: rgba(2,6,15,0.98);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow-soft);
-      font-size: 9px;
-      color: var(--muted);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .side-card h3 {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-      margin: 0 0 4px;
-      font-weight: 500;
-    }
-
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 14px;
-      font-size: 9px;
-      margin: 1px 0;
-    }
-
-    .meta-label { color: var(--muted); }
-    .meta-value { color: var(--text); }
-
-    .side-note {
-      margin-top: 4px;
-      font-size: 8px;
-      color: var(--muted);
-    }
-
     footer {
-      margin-top: 14px;
+      margin-top: 18px;
       padding-top: 9px;
       font-size: 8px;
       color: var(--muted);
@@ -330,9 +288,6 @@
       nav {
         padding-top: 2px;
       }
-      .sections {
-        grid-template-columns: 1fr;
-      }
       .page-wrap {
         padding: 20px 14px 24px;
       }
@@ -350,98 +305,54 @@
       </div>
       <nav>
         <a href="#extension0">Game</a>
-        <a href="#experience">Experience</a>
-        <a href="#presskit">Info</a>
         <a href="#about">About</a>
       </nav>
     </header>
 
     <section class="hero" id="extension0">
-      <div class="eyebrow">Now available on itch.io</div>
+      <div class="eyebrow">Interactive audio narrative · Coming soon on itch.io</div>
       <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
+
       <p class="hero-main">
         <span>Every choice is logged. Every pause is assessed.</span>
         <span>A 45-minute branching audio narrative where workplace protocol meets cosmic intrusion. Navigate strange menus, enforced breathing exercises, and controlled scenarios that bend cause and effect.</span>
         <span>The Interval Bureau is listening.</span>
       </p>
+
       <div class="hero-ctas">
         <a class="btn" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
-          Play on itch.io
+          Follow on itch.io
         </a>
-        <a class="btn btn-outline" href="#presskit">
-          Key info
+        <a class="btn btn-outline" href="#about">
+          Learn more
         </a>
       </div>
+
       <div class="hero-meta">
-        <span><strong>Audio-first.</strong> One desk, one phone.</span>
-        <span><strong>Single sitting.</strong> Designed to be finished.</span>
-        <span><strong>Content notes.</strong> Breath control themes, surveillance, depersonalization.</span>
+        <span><strong>Audio-first.</strong> One desk, one phone, no clutter.</span>
+        <span><strong>Single sitting.</strong> Built for ~45 minutes start to finish.</span>
+        <span><strong>Minimal input.</strong> Number keys only; the system listens more than you speak.</span>
       </div>
+
+      <p class="hero-extra">
+        A contained call that escalates in controlled steps. No filler, no fake choices: the line measures how you follow instructions once they stop feeling safe. Content notes: breath control themes, panic sensations, surveillance, depersonalization; no graphic violence.
+      </p>
     </section>
 
-    <div class="sections">
-      <div>
-        <section id="experience">
-          <h2>Experience</h2>
-          <p>
-            A contained call that escalates in clear steps. No filler, no fake interactivity:
-            the system listens, scores, and adjusts to how you follow its instructions once they stop feeling safe.
-          </p>
-        </section>
+    <section id="about">
+      <h2>About Quiet Den Games</h2>
+      <p>
+        Quiet Den Games is a solo label for sharp, atmospheric interactive work:
+        short runtimes, deliberate writing, and systems that respect your time.
+        Extension 0 is the first release set inside the Interval Bureau.
+      </p>
+    </section>
 
-        <section id="about">
-          <h2>About Quiet Den Games</h2>
-          <p>
-            Quiet Den Games is a solo label for sharp, atmospheric interactive work:
-            short runtimes, deliberate writing, and mechanics that respect your time.
-          </p>
-        </section>
-      </div>
-
-      <aside id="presskit">
-        <div class="side-card">
-          <h3>Key info</h3>
-          <div class="meta-row">
-            <div><span class="meta-label">Title:</span> <span class="meta-value">The Interval Bureau: Extension 0</span></div>
-          </div>
-          <div class="meta-row">
-            <div><span class="meta-label">Developer:</span> <span class="meta-value">Quiet Den Games</span></div>
-          </div>
-          <div class="meta-row">
-            <div><span class="meta-label">Platform:</span> <span class="meta-value">PC via itch.io</span></div>
-          </div>
-          <div class="meta-row">
-            <div><span class="meta-label">Length:</span> <span class="meta-value">~45 minutes</span></div>
-          </div>
-          <div class="meta-row">
-            <div><span class="meta-label">Focus:</span> <span class="meta-value">Audio narrative, minimal input</span></div>
-          </div>
-          <div class="meta-row" style="margin-top:4px;">
-            <div><span class="meta-label">Contact:</span>
-              <span class="meta-value">
-                <a href="mailto:contact@quietdengames.com">contact@quietdengames.com</a>
-              </span>
-            </div>
-          </div>
-          <div class="meta-row">
-            <div><span class="meta-label">itch.io:</span>
-              <span class="meta-value">
-                <a href="https://quietdengames.itch.io" target="_blank" rel="noopener">quietdengames.itch.io</a>
-              </span>
-            </div>
-          </div>
-          <div class="side-note">
-            Full credits and content notes are listed in-game.
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <footer>
+    <footer id="contact">
       <div>© <span id="year"></span> Quiet Den Games.</div>
       <div>No trackers. No analytics.</div>
-      <div><a href="mailto:contact@quietdengames.com">Contact</a></div>
-      <div><a href="https://quietdengames.itch.io" target="_blank" rel="noopener">itch.io</a></div>
+      <div><a href="mailto:contact@quietdengames.com">contact@quietdengames.com</a></div>
+      <div><a href="https://quietdengames.itch.io" target="_blank" rel="noopener">quietdengames.itch.io</a></div>
     </footer>
   </main>
 </div>
