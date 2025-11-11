@@ -9,7 +9,7 @@
   <style>
     :root {
       --bg: #020308;
-      --accent: #60a5fa; /* cool monitored-line blue */
+      --accent: #60a5fa;
       --accent-soft: rgba(96,165,250,0.18);
       --accent-soft2: rgba(96,165,250,0.05);
       --text: #f5f5f5;
@@ -73,23 +73,10 @@
       margin-bottom: 26px;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-label {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
     .brand-title {
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--text);
     }
@@ -268,30 +255,6 @@
       color: #d4d4d4;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 7px;
-      margin-top: 4px;
-    }
-
-    .feature {
-      padding: 7px 8px;
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148,163,253,0.12);
-      background: radial-gradient(circle at top left, var(--accent-soft2), transparent) rgba(3,6,12,0.98);
-      font-size: 9px;
-      color: var(--muted);
-    }
-
-    .feature strong {
-      display: block;
-      font-size: 9px;
-      color: var(--text);
-      margin-bottom: 1px;
-      font-weight: 500;
-    }
-
     .side-card {
       padding: 10px 10px 9px;
       border-radius: var(--radius-xl);
@@ -380,10 +343,7 @@
 <div class="page-wrap">
   <main>
     <header>
-      <div class="brand">
-        <div class="brand-label">Independent narrative games</div>
-        <div class="brand-title">Quiet Den Games</div>
-      </div>
+      <div class="brand-title">Quiet Den Games</div>
       <div class="pill">
         <span></span>
         Extension 0
@@ -424,33 +384,16 @@
         <section id="experience">
           <h2>Experience</h2>
           <p>
-            A contained call that escalates cleanly: no busywork, no fake choices, just a monitored line testing how you follow instructions once they stop feeling safe.
+            A contained call that escalates in clear steps. No filler, no fake interactivity:
+            the system listens, scores, and adjusts to how you follow its instructions once they stop feeling safe.
           </p>
-          <div class="feature-grid">
-            <div class="feature">
-              <strong>Branching audio</strong>
-              Story delivered through voice and sound; your inputs are simple number keys.
-            </div>
-            <div class="feature">
-              <strong>Corporate horror</strong>
-              Scripts, metrics, liability language, and a system that sounds far too calm.
-            </div>
-            <div class="feature">
-              <strong>Minimal visuals</strong>
-              Static framing on the phone to keep focus where it belongs.
-            </div>
-            <div class="feature">
-              <strong>Multiple paths</strong>
-              Different routes expose different parts of the Interval Bureau’s internal logic.
-            </div>
-          </div>
         </section>
 
         <section id="about">
           <h2>About Quiet Den Games</h2>
           <p>
             Quiet Den Games is a solo label for sharp, atmospheric interactive work:
-            short runtimes, deliberate writing, and mechanics that don’t waste your time.
+            short runtimes, deliberate writing, and mechanics that respect your time.
           </p>
         </section>
       </div>
@@ -473,7 +416,6 @@
           <div class="meta-row">
             <div><span class="meta-label">Focus:</span> <span class="meta-value">Audio narrative, minimal input</span></div>
           </div>
-
           <div class="meta-row" style="margin-top:4px;">
             <div><span class="meta-label">Contact:</span>
               <span class="meta-value">
@@ -488,9 +430,8 @@
               </span>
             </div>
           </div>
-
           <div class="side-note">
-            Credits and detailed attributions are listed in-game.
+            Full credits and content notes are listed in-game.
           </div>
         </div>
       </aside>
