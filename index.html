@@ -22,10 +22,11 @@
 
   <link rel="icon" href="/favicon.ico">
 
-  <!-- Indie, bookish vibe font (OFL-licensed) -->
+  <!-- Fonts (licensed for web use) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -90,6 +91,9 @@
       background-color: var(--panel);
       box-shadow: var(--shadow-soft);
       margin-bottom: 24px;
+      display: flex;          /* keep button at the bottom */
+      flex-direction: column; /* stack children vertically */
+      min-height: 360px;      /* gives room for meta + button */
     }
 
     .eyebrow {
@@ -101,9 +105,10 @@
     }
 
     .hero-title {
+      font-family: "Inter", var(--font-body);
+      font-weight: 600;
+      letter-spacing: 0.01em;
       font-size: 24px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
       margin: 0 0 10px;
       color: var(--text);
     }
@@ -111,7 +116,7 @@
     .hero-main {
       font-size: 13px;
       color: var(--text);
-      margin: 0 0 16px;
+      margin: 0 0 12px;
     }
 
     .hero-main span {
@@ -119,20 +124,36 @@
       margin-bottom: 4px;
     }
 
+    .hero-meta {
+      font-size: 10px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 2px;
+      margin-bottom: 14px;
+    }
+
+    .hero-meta span strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     .hero-ctas {
+      margin-top: auto; /* push button to the bottom of .hero */
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 8px;
     }
 
     a.btn {
       display: inline-flex;
       align-items: center;
-      padding: 8px 14px 9px;
+      justify-content: center;
+      padding: 12px 20px 13px;   /* bigger button */
       border-radius: 999px;
-      font-size: 10px;
-      font-weight: 500;
+      font-size: 12px;           /* bigger text */
+      font-weight: 600;
       text-decoration: none;
       background: transparent;
       color: var(--accent);
@@ -146,20 +167,6 @@
       border-color: var(--accent);
       box-shadow: var(--shadow-soft);
       transform: translateY(-1px);
-    }
-
-    .hero-meta {
-      font-size: 9px;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 2px;
-    }
-
-    .hero-meta span strong {
-      color: var(--accent);
-      font-weight: 600;
     }
 
     .about-block {
@@ -236,17 +243,19 @@
         </span>
       </p>
 
-      <div class="hero-ctas">
-        <a class="btn" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
-          Follow on itch.io
-        </a>
-      </div>
-
+      <!-- moved meta ABOVE the button -->
       <div class="hero-meta">
         <span><strong>Audio first.</strong> One desk, one phone.</span>
         <span><strong>Single sitting.</strong> Around 45 minutes.</span>
         <span><strong>Input.</strong> Simple number key choices.</span>
         <span><strong>Content warnings.</strong> Breath control, panic sensations, depersonalization.</span>
+      </div>
+
+      <!-- button now sits at the bottom of the hero block -->
+      <div class="hero-ctas">
+        <a class="btn" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
+          Follow on itch.io
+        </a>
       </div>
     </section>
 
