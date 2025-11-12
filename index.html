@@ -46,9 +46,6 @@
 
     * { box-sizing: border-box; }
 
-    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-    * { font-synthesis: none; }
-
     body {
       margin: 0;
       padding: 0;
@@ -104,7 +101,7 @@
       margin-bottom: 6px;
     }
 
-    /* Title + itch embed row */
+    /* Title + button row */
     .hero-head {
       display: flex;
       align-items: center;
@@ -123,18 +120,7 @@
     }
 
     .headline-cta {
-      margin-left: auto;            /* sit at the right on wide screens */
-      display: flex;
-      align-items: center;
-    }
-
-    /* Make the itch embed behave nicely in the row and on mobile */
-    .itch-embed {
-      border: 0;
-      display: block;
-      width: 360px;                 /* override huge default width */
-      max-width: 100%;
-      height: 165px;                /* per embed’s default height */
+      margin-left: auto;
     }
 
     .hero-main {
@@ -155,6 +141,30 @@
     }
 
     .hero-meta span strong { color: var(--accent); font-weight: 600; }
+
+    /* Button size (previous smaller size) */
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 500;
+      text-decoration: none;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent-soft);
+      transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+    }
+
+    a.btn:hover {
+      background-color: var(--accent-soft);
+      color: var(--text);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-1px);
+    }
 
     .about-block {
       margin-top: 10px;
@@ -190,25 +200,23 @@
     footer a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
     footer a:hover { color: var(--accent); }
 
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    a:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
 
     /* Center brand on mobile only */
     @media (max-width: 840px) {
       header {
         flex-direction: column;
-        align-items: center;
+        align-items: center;  /* center the brand on mobile */
         gap: 6px;
       }
       .brand-title {
-        text-align: center;
+        text-align: center;   /* ensure text is centered */
         width: 100%;
       }
-      .headline-cta {
-        margin-left: 0;             /* allow the embed to wrap under title on mobile */
-        width: 100%;
-        justify-content: center;
-      }
-      .itch-embed { width: 100%; }  /* fill container on mobile */
+      .headline-cta { margin-left: 0; } /* allow button to wrap neatly under title if needed */
       .page-wrap { padding: 20px 14px 24px; }
       .about-block { max-width: 100%; }
     }
@@ -224,20 +232,12 @@
     <section class="hero" id="extension0">
       <div class="eyebrow">Interactive audio narrative · coming soon on itch.io</div>
 
-      <!-- Title + itch embed on the same row (wraps neatly on mobile) -->
+      <!-- Title + button on same row -->
       <div class="hero-head">
         <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
-        <div class="headline-cta">
-          <iframe
-            class="itch-embed"
-            frameborder="0"
-            src="https://itch.io/embed/4030743?border_width=0&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=ffb079&amp;border_color=363636"
-            width="550"
-            height="165"
-          >
-            <a href="https://quietdengames.itch.io/extension0">The Interval Bureau - Extension 0 by QuietDenGames</a>
-          </iframe>
-        </div>
+        <a class="btn headline-cta" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
+          Follow on itch.io
+        </a>
       </div>
 
       <p class="hero-main">
