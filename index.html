@@ -120,7 +120,7 @@
     }
 
     .headline-cta {
-      margin-left: auto;          /* push to the right on wide screens */
+      margin-left: auto;
     }
 
     .hero-main {
@@ -142,7 +142,7 @@
 
     .hero-meta span strong { color: var(--accent); font-weight: 600; }
 
-    /* Button (reverted to previous smaller size) */
+    /* Button size (previous smaller size) */
     a.btn {
       display: inline-flex;
       align-items: center;
@@ -205,13 +205,18 @@
       outline-offset: 3px;
     }
 
-    @media (max-width: 640px) {
-      /* On narrow screens, title and button will wrap; keep button full-width if alone on a line */
-      .headline-cta { margin-left: 0; }
-    }
-
+    /* Center brand on mobile only */
     @media (max-width: 840px) {
-      header { flex-direction: column; align-items: flex-start; gap: 6px; }
+      header {
+        flex-direction: column;
+        align-items: center;  /* center the brand on mobile */
+        gap: 6px;
+      }
+      .brand-title {
+        text-align: center;   /* ensure text is centered */
+        width: 100%;
+      }
+      .headline-cta { margin-left: 0; } /* allow button to wrap neatly under title if needed */
       .page-wrap { padding: 20px 14px 24px; }
       .about-block { max-width: 100%; }
     }
