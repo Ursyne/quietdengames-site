@@ -6,6 +6,23 @@
   <title>The Interval Bureau: Extension 0 | Quiet Den Games</title>
   <meta name="description" content="The Interval Bureau is listening. A 45-minute branching audio narrative where workplace protocol meets cosmic intrusion. Navigate strange menus, enforced breathing exercises, and controlled scenarios that bend cause and effect.">
   <meta name="theme-color" content="#020817">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Interval Bureau: Extension 0 | Quiet Den Games">
+  <meta property="og:description" content="The Interval Bureau is listening. A 45-minute branching audio narrative where workplace protocol meets cosmic intrusion.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quietdengames.com">
+  <meta property="og:image" content="https://quietdengames.com/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Interval Bureau: Extension 0 | Quiet Den Games">
+  <meta name="twitter:description" content="The Interval Bureau is listening. A 45-minute branching audio narrative where workplace protocol meets cosmic intrusion.">
+  <meta name="twitter:image" content="https://quietdengames.com/og-image.png">
+
+  <!-- Favicon placeholder (swap when ready) -->
+  <link rel="icon" href="/favicon.ico">
+
   <style>
     :root {
       --bg: #020308;
@@ -17,7 +34,7 @@
       --border-subtle: rgba(148,163,253,0.16);
       --radius-xxl: 30px;
       --shadow-soft: 0 18px 55px rgba(0,0,0,0.7);
-      --font-sans: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --max-width: 880px;
       --transition-fast: 0.22s ease-out;
     }
@@ -92,7 +109,7 @@
       text-transform: uppercase;
       border: 1px solid var(--accent-soft);
       color: var(--accent);
-      background: rgba(0,0,0,0.96);
+      background: rgba(0, 0, 0, 0.96);
       backdrop-filter: blur(10px);
       margin-left: auto;
       white-space: nowrap;
@@ -135,7 +152,7 @@
       border: 1px solid var(--border-subtle);
       background:
         radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 55%),
-        rgba(3,6,12,0.98);
+        rgba(3, 6, 12, 0.98);
       box-shadow: var(--shadow-soft);
       margin-bottom: 24px;
       position: relative;
@@ -220,7 +237,7 @@
       padding: 20px 20px 16px;
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
-      background: rgba(5,8,15,0.98);
+      background: rgba(5, 8, 15, 0.98);
       box-shadow: var(--shadow-soft);
       max-width: 480px;
     }
@@ -263,6 +280,13 @@
       border-color: var(--accent);
     }
 
+    /* Focus states (a11y) */
+    a:focus-visible,
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
     @media (max-width: 840px) {
       header {
         flex-direction: column;
@@ -294,7 +318,6 @@
         Extension 0
       </div>
       <nav>
-        <a href="#extension0">Game</a>
         <a href="#about">About</a>
       </nav>
     </header>
@@ -312,15 +335,16 @@
       </p>
 
       <div class="hero-ctas">
-        <a class="btn" href="https://quietdengames.itch.io/extension0" target="_blank" rel="noopener">
+        <!-- Point to main profile for now; update to /extension0 when live -->
+        <a class="btn" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
           Follow on itch.io
         </a>
       </div>
 
       <div class="hero-meta">
         <span><strong>Audio-first.</strong> One desk, one phone.</span>
-        <span><strong>Single sitting.</strong> Built for ~45 minutes start to finish.</span>
-        <span><strong>Minimal input.</strong> Number keys only; the system listens.</span>
+        <span><strong>Single sitting.</strong> Around 45 minutes.</span>
+        <span><strong>Input.</strong> Simple number key choices.</span>
       </div>
     </section>
 
@@ -329,7 +353,7 @@
       <p>
         Quiet Den Games is a solo developer making sharp, atmospheric interactive projects
         with short runtimes and focused writing. Expect a growing collection of small games,
-        often narrative-focused, each exploring something new.
+        often narrative-focused and always interested in trying new things.
       </p>
     </section>
 
@@ -337,7 +361,7 @@
       <div>© <span id="year"></span> Quiet Den Games.</div>
       <div>No trackers. No analytics.</div>
       <div><a href="mailto:contact@quietdengames.com">contact@quietdengames.com</a></div>
-      <div><a href="https://quietdengames.itch.io/extension0" target="_blank" rel="noopener">quietdengames.itch.io/extension0</a></div>
+      <div><a href="https://quietdengames.itch.io" target="_blank" rel="noopener">quietdengames.itch.io</a></div>
     </footer>
   </main>
 </div>
