@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Interval Bureau: Extension 0 | Quiet Den Games</title>
   <meta name="description" content="Every choice is logged. Every pause is assessed. A 45-minute branching audio narrative where workplace protocol meets cosmic intrusion. The Interval Bureau is listening.">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#020817">
   <style>
     :root {
       --bg: #020308;
-      --accent: #60a5fa;
-      --accent-soft: rgba(96,165,250,0.18);
-      --accent-soft2: rgba(96,165,250,0.05);
+      --accent: #38bdf8;         /* clinical cyan, system/status feel */
+      --accent-soft: rgba(56,189,248,0.24);
+      --accent-soft2: rgba(56,189,248,0.06);
       --text: #f5f5f5;
       --muted: #9ca3af;
-      --border-subtle: rgba(148,163,253,0.14);
+      --border-subtle: rgba(148,163,253,0.16);
       --radius-xxl: 30px;
       --shadow-soft: 0 18px 55px rgba(0,0,0,0.7);
       --font-sans: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -55,9 +55,9 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.04;
+      opacity: 0.035;
       background-image:
-        linear-gradient(rgba(96,165,250,0.06) 1px, transparent 1px),
+        linear-gradient(rgba(56,189,248,0.05) 1px, transparent 1px),
         linear-gradient(to right, rgba(15,23,42,0.22) 1px, transparent 1px);
       background-size: 0.5px 18px, 18px 0.5px;
       mix-blend-mode: screen;
@@ -91,7 +91,7 @@
       text-transform: uppercase;
       border: 1px solid var(--accent-soft);
       color: var(--accent);
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.96);
       backdrop-filter: blur(10px);
       margin-left: auto;
       white-space: nowrap;
@@ -133,7 +133,7 @@
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
       background:
-        radial-gradient(circle at top left, rgba(96,165,250,0.10), transparent 55%),
+        radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 55%),
         rgba(3,6,12,0.98);
       box-shadow: var(--shadow-soft);
       margin-bottom: 24px;
@@ -196,22 +196,9 @@
     }
 
     a.btn:hover {
-      background: #93c5fd;
+      background: #7dd3fc;
       transform: translateY(-1px);
       box-shadow: 0 22px 70px rgba(0,0,0,0.9);
-    }
-
-    a.btn-outline {
-      background: transparent;
-      color: var(--accent);
-      border-color: var(--accent-soft);
-      box-shadow: none;
-    }
-
-    a.btn-outline:hover {
-      background: var(--accent-soft2);
-      color: var(--accent);
-      box-shadow: var(--shadow-soft);
     }
 
     .hero-meta {
@@ -220,18 +207,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .hero-meta span strong {
       color: var(--accent);
       font-weight: 500;
-    }
-
-    .hero-extra {
-      font-size: 9px;
-      color: var(--muted);
-      max-width: 640px;
     }
 
     section {
@@ -320,23 +301,16 @@
       </p>
 
       <div class="hero-ctas">
-        <a class="btn" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
+        <a class="btn" href="https://quietdengames.itch.io/extension0" target="_blank" rel="noopener">
           Follow on itch.io
-        </a>
-        <a class="btn btn-outline" href="#about">
-          Learn more
         </a>
       </div>
 
       <div class="hero-meta">
-        <span><strong>Audio-first.</strong> One desk, one phone, no clutter.</span>
+        <span><strong>Audio-first.</strong> One desk, one phone.</span>
         <span><strong>Single sitting.</strong> Built for ~45 minutes start to finish.</span>
-        <span><strong>Minimal input.</strong> Number keys only; the system listens more than you speak.</span>
+        <span><strong>Minimal input.</strong> Number keys only; the system listens.</span>
       </div>
-
-      <p class="hero-extra">
-        A contained call that escalates in controlled steps. No filler, no fake choices: the line measures how you follow instructions once they stop feeling safe. Content notes: breath control themes, panic sensations, surveillance, depersonalization; no graphic violence.
-      </p>
     </section>
 
     <section id="about">
@@ -352,7 +326,7 @@
       <div>© <span id="year"></span> Quiet Den Games.</div>
       <div>No trackers. No analytics.</div>
       <div><a href="mailto:contact@quietdengames.com">contact@quietdengames.com</a></div>
-      <div><a href="https://quietdengames.itch.io" target="_blank" rel="noopener">quietdengames.itch.io</a></div>
+      <div><a href="https://quietdengames.itch.io/extension0" target="_blank" rel="noopener">quietdengames.itch.io/extension0</a></div>
     </footer>
   </main>
 </div>
