@@ -53,7 +53,8 @@
       padding: 0;
       font-family: var(--font-body);
       font-size: 15px;
-      background-color: var(--bg);
+      background:
+        radial-gradient(circle at top, #161823 0, #050507 55%, #020205 100%);
       color: var(--text);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -97,7 +98,7 @@
     .brand-tagline {
       font-size: 13px;
       color: var(--muted);
-      max-width: 320px;
+      max-width: 360px;
       line-height: 1.5;
     }
 
@@ -119,12 +120,39 @@
     }
 
     .hero {
+      position: relative;
       padding: 22px 20px 18px;
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top, #121318 0, var(--panel) 55%, #050507 100%);
+      background:
+        radial-gradient(circle at top, #121318 0, var(--panel) 55%, #050507 100%);
       box-shadow: var(--shadow-soft);
       margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid rgba(224,184,122,0.12);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,184,122,0.16), transparent 60%);
+      top: -80px;
+      right: -80px;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0.7;
     }
 
     .eyebrow {
@@ -132,30 +160,42 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .hero-head {
+      position: relative;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      z-index: 1;
     }
 
     .hero-title {
       font-family: "Inter", var(--font-body);
       font-weight: 600;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       font-size: 26px;
       margin: 0;
       color: var(--text);
     }
 
+    .hero-status {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
     .hero-main {
+      position: relative;
       font-size: 14px;
       color: var(--text);
-      margin: 0 0 14px;
+      margin: 6px 0 14px;
+      z-index: 1;
     }
 
     .hero-main span {
@@ -164,12 +204,14 @@
     }
 
     .hero-meta {
+      position: relative;
       font-size: 12px;
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
       gap: 8px 18px;
       margin-top: 4px;
+      z-index: 1;
     }
 
     .hero-meta span strong {
@@ -345,21 +387,24 @@
       <div class="brand-group">
         <div class="brand-title">Quiet Den Games</div>
         <div class="brand-tagline">
-          Solo studio for sharp, atmospheric interactive projects.
+          Soft-spoken games about strange systems and the people caught inside them.
         </div>
       </div>
       <nav class="site-nav">
-        <a href="#extension0">Game</a>
-        <a href="#about">About</a>
+        <a href="#extension0">Line</a>
+        <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <section class="hero" id="extension0">
-      <div class="eyebrow">Interactive audio narrative · coming soon on itch.io</div>
+      <div class="eyebrow">Audio hotline · workplace surrealism</div>
 
       <div class="hero-head">
-        <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
+        <div>
+          <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
+          <div class="hero-status">Line: active · Extension: 0</div>
+        </div>
 
         <div class="cta-row">
           <a class="btn btn-primary"
@@ -379,25 +424,27 @@
       <p class="hero-main">
         <span>The Interval Bureau is listening.</span>
         <span>
-          A branching audio narrative where workplace protocol meets cosmic intrusion.
+          An audio hotline where workplace protocol, breathing drills, and something older than the company share the same line.
+        </span>
+        <span>
           Navigate strange menus, enforced breathing exercises, and controlled scenarios that bend cause and effect.
         </span>
       </p>
 
       <div class="hero-meta">
-        <span><strong>Audio first.</strong> One desk, one phone.</span>
-        <span><strong>Single sitting.</strong> Around 45 minutes.</span>
-        <span><strong>Input.</strong> Number key choices only.</span>
+        <span><strong>Audio first.</strong> One desk, one phone, everything else in your head.</span>
+        <span><strong>Single sitting.</strong> About 45 minutes, designed to be finished in one go.</span>
+        <span><strong>Input.</strong> Number keys only; every pause is counted.</span>
         <span><strong>Content warnings.</strong> Breath control, panic sensations, depersonalization.</span>
       </div>
     </section>
 
     <section id="about" class="about-block">
-      <h2>About Quiet Den Games</h2>
+      <h2>File: Quiet Den Games</h2>
       <p>
-        Quiet Den Games is a solo developer making sharp, atmospheric interactive projects
-        with short runtimes and focused writing. Expect a growing collection of small games,
-        often narrative focused and always interested in trying new things.
+        Quiet Den Games is a one-person studio for short, atmospheric interactive projects:
+        small runtimes, focused writing, and too much attention paid to sound. Expect a handful
+        of strange lines, odd systems, and games that feel like you dialed the wrong number and stayed on anyway.
       </p>
     </section>
 
