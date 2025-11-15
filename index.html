@@ -73,20 +73,20 @@
       margin: 0 auto;
     }
 
-    /* NEW: big logo splash at top */
+    /* Logo splash at top */
     .logo-hero {
-      min-height: 80vh; /* mostly fills the screen */
+      min-height: 60vh; /* was 80vh */
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 32px;
+      margin-bottom: 24px; /* slightly tighter */
     }
 
     .logo-hero img {
-      width: min(70vw, 520px); /* responsive: 70% of viewport width, capped */
+      width: min(40vw, 360px); /* was 70vw, 520px */
       height: auto;
       display: block;
-      filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.9));
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.85));
     }
 
     header {
@@ -336,6 +336,15 @@
         padding: 20px 14px 24px;
       }
 
+      .logo-hero {
+        min-height: 50vh; /* was 70vh */
+        margin-bottom: 24px;
+      }
+
+      .logo-hero img {
+        width: min(70vw, 320px); /* smaller cap on phones */
+      }
+
       header {
         flex-direction: column;
         align-items: center;
@@ -362,11 +371,6 @@
 
       .cta-row {
         margin-left: 0;
-      }
-
-      .logo-hero {
-        min-height: 70vh; /* slightly shorter on small screens */
-        margin-bottom: 24px;
       }
     }
   </style>
