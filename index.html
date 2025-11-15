@@ -53,7 +53,7 @@
       padding: 0;
       font-family: var(--font-body);
       font-size: 15px;
-      background-color: var(--bg); /* flat black to match logo */
+      background-color: var(--bg);
       color: var(--text);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -155,13 +155,25 @@
       position: relative;
       font-size: 14px;
       color: var(--text);
-      margin: 6px 0 14px;
+      margin: 6px 0 8px;
       z-index: 1;
     }
 
     .hero-main span {
       display: block;
       margin-bottom: 4px;
+    }
+
+    /* New tagline style to make it pop */
+    .hero-tagline {
+      position: relative;
+      font-family: "Inter", var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 10px 0 6px;
+      z-index: 1;
     }
 
     .hero-meta {
@@ -343,7 +355,7 @@
     </section>
 
     <section class="hero" id="extension0">
-      <div class="eyebrow">Interactive audio narrative · coming soon on itch.io</div>
+      <div class="eyebrow">Interactive audio narrative · Coming early 2026</div>
 
       <div class="hero-head">
         <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
@@ -368,8 +380,11 @@
           A branching audio narrative where workplace protocol meets cosmic intrusion.
           Navigate strange menus, enforced breathing exercises, and controlled scenarios that bend cause and effect.
         </span>
-        <span>The Interval Bureau is listening.</span>
       </p>
+
+      <div class="hero-tagline">
+        The Interval Bureau is listening.
+      </div>
 
       <div class="hero-meta">
         <span><strong>Audio first.</strong> One desk, one phone.</span>
