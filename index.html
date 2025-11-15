@@ -58,6 +58,7 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
     }
 
     .page-wrap {
@@ -76,8 +77,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 16px;
       margin-bottom: 26px;
+    }
+
+    .brand-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .brand-title {
@@ -90,9 +97,25 @@
     .brand-tagline {
       font-size: 13px;
       color: var(--muted);
-      max-width: 260px;
+      max-width: 320px;
       line-height: 1.5;
-      text-align: right;
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 14px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .site-nav a:hover {
+      color: var(--accent);
     }
 
     .hero {
@@ -112,7 +135,6 @@
       margin-bottom: 8px;
     }
 
-    /* Title + button row */
     .hero-head {
       display: flex;
       align-items: center;
@@ -155,7 +177,6 @@
       font-weight: 600;
     }
 
-    /* Buttons */
     .cta-row {
       display: flex;
       flex-wrap: wrap;
@@ -208,6 +229,21 @@
       border-color: var(--accent);
       box-shadow: var(--shadow-soft);
       transform: translateY(-1px);
+    }
+
+    .btn-disabled {
+      opacity: 0.45;
+      cursor: default;
+      pointer-events: none;
+      border-style: dashed;
+    }
+
+    .btn-disabled:hover {
+      transform: none;
+      box-shadow: none;
+      background: transparent;
+      border-color: var(--accent-soft);
+      color: var(--muted);
     }
 
     .about-block {
@@ -263,31 +299,39 @@
       outline-offset: 3px;
     }
 
-    /* Mobile tweaks */
     @media (max-width: 840px) {
       header {
         flex-direction: column;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
       }
-      .brand-title {
+
+      .brand-group {
+        align-items: center;
         text-align: center;
-        width: 100%;
       }
+
       .brand-tagline {
-        text-align: center;
         max-width: none;
       }
+
+      .site-nav {
+        justify-content: center;
+      }
+
       .page-wrap {
         padding: 20px 14px 24px;
       }
+
       .about-block {
         max-width: 100%;
       }
+
       .hero-head {
         flex-direction: column;
         align-items: flex-start;
       }
+
       .cta-row {
         margin-left: 0;
       }
@@ -298,10 +342,17 @@
 <div class="page-wrap">
   <main>
     <header>
-      <div class="brand-title">Quiet Den Games</div>
-      <div class="brand-tagline">
-        Solo studio for sharp, atmospheric interactive projects.
+      <div class="brand-group">
+        <div class="brand-title">Quiet Den Games</div>
+        <div class="brand-tagline">
+          Solo studio for sharp, atmospheric interactive projects.
+        </div>
       </div>
+      <nav class="site-nav">
+        <a href="#extension0">Game</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
     <section class="hero" id="extension0">
@@ -314,13 +365,13 @@
           <a class="btn btn-primary"
              href="https://quietdengames.itch.io/extension0"
              target="_blank" rel="noopener">
-            View on itch.io
+            Play in browser on itch.io
           </a>
 
-          <!-- If you create play.html with the embed, this can point to it -->
-          <a class="btn btn-outline"
-             href="play.html">
-            Play in browser
+          <a class="btn btn-outline btn-disabled"
+             href="#"
+             aria-disabled="true">
+            Steam page (coming soon)
           </a>
         </div>
       </div>
