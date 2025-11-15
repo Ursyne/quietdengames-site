@@ -63,7 +63,7 @@
 
     .page-wrap {
       min-height: 100vh;
-      padding: 24px 20px 32px;
+      padding: 0 20px 32px; /* no top padding */
     }
 
     main {
@@ -72,9 +72,9 @@
       margin: 0 auto;
     }
 
-    /* Logo splash at top, tighter frame */
+    /* Logo splash at top, now flush with top edge */
     .logo-hero {
-      padding: 16px 0 8px;
+      padding: 0 0 8px;     /* no top padding */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -164,7 +164,7 @@
       margin-bottom: 4px;
     }
 
-    /* New tagline style to make it pop */
+    /* Tagline style to make it pop */
     .hero-tagline {
       position: relative;
       font-family: "Inter", var(--font-body);
@@ -317,11 +317,11 @@
 
     @media (max-width: 840px) {
       .page-wrap {
-        padding: 20px 14px 24px;
+        padding: 0 14px 24px; /* no top padding on mobile either */
       }
 
       .logo-hero {
-        padding: 12px 0 4px;
+        padding: 0 0 4px;   /* no top padding */
         margin-bottom: 12px;
       }
 
