@@ -44,12 +44,15 @@
       --transition-fast: 0.18s ease-out;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       padding: 0;
       font-family: var(--font-body);
+      font-size: 15px;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -72,33 +75,41 @@
     header {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .brand-title {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 500;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       color: var(--text);
     }
 
+    .brand-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 260px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
     .hero {
-      padding: 22px 20px 16px;
+      padding: 22px 20px 18px;
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
-      background-color: var(--panel);
+      background: radial-gradient(circle at top, #121318 0, var(--panel) 55%, #050507 100%);
       box-shadow: var(--shadow-soft);
       margin-bottom: 24px;
     }
 
     .eyebrow {
-      font-size: 9px;
+      font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     /* Title + button row */
@@ -107,58 +118,91 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .hero-title {
       font-family: "Inter", var(--font-body);
       font-weight: 600;
-      letter-spacing: 0.01em;
-      font-size: 24px;
+      letter-spacing: 0.03em;
+      font-size: 26px;
       margin: 0;
       color: var(--text);
     }
 
-    .headline-cta {
-      margin-left: auto;
-    }
-
     .hero-main {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text);
-      margin: 0 0 12px;
+      margin: 0 0 14px;
     }
 
-    .hero-main span { display: block; margin-bottom: 4px; }
+    .hero-main span {
+      display: block;
+      margin-bottom: 4px;
+    }
 
     .hero-meta {
-      font-size: 10px;
+      font-size: 12px;
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 18px;
-      margin-top: 2px;
+      gap: 8px 18px;
+      margin-top: 4px;
     }
 
-    .hero-meta span strong { color: var(--accent); font-weight: 600; }
+    .hero-meta span strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
 
-    /* Button size (previous smaller size) */
+    /* Buttons */
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-left: auto;
+    }
+
     a.btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 14px 9px;
+      padding: 9px 16px 10px;
       border-radius: 999px;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
       text-decoration: none;
-      background: transparent;
-      color: var(--accent);
-      border: 1px solid var(--accent-soft);
-      transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+      white-space: nowrap;
     }
 
-    a.btn:hover {
+    .btn-primary {
+      background: var(--accent);
+      color: #141214;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: #f0c78c;
+      border-color: #f0c78c;
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border-color: var(--accent-soft);
+    }
+
+    .btn-outline:hover {
       background-color: var(--accent-soft);
       color: var(--text);
       border-color: var(--accent);
@@ -173,11 +217,11 @@
       border: 1px solid var(--border-subtle);
       background-color: var(--panel);
       box-shadow: var(--shadow-soft);
-      max-width: 480px;
+      max-width: 520px;
     }
 
     .about-block h2 {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -185,40 +229,68 @@
       margin: 0 0 6px;
     }
 
-    .about-block p { margin: 0; font-size: 11px; color: var(--text); }
+    .about-block p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text);
+    }
 
     footer {
       margin-top: 40px;
       padding-bottom: 8px;
-      font-size: 9px;
+      font-size: 11px;
       color: var(--muted);
       text-align: center;
     }
 
-    footer p { margin: 2px 0; }
+    footer p {
+      margin: 2px 0;
+    }
 
-    footer a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
-    footer a:hover { color: var(--accent); }
+    footer a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
 
-    a:focus-visible, .btn:focus-visible {
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    a:focus-visible,
+    .btn:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
 
-    /* Center brand on mobile only */
+    /* Mobile tweaks */
     @media (max-width: 840px) {
       header {
         flex-direction: column;
-        align-items: center;  /* center the brand on mobile */
+        align-items: center;
         gap: 6px;
       }
       .brand-title {
-        text-align: center;   /* ensure text is centered */
+        text-align: center;
         width: 100%;
       }
-      .headline-cta { margin-left: 0; } /* allow button to wrap neatly under title if needed */
-      .page-wrap { padding: 20px 14px 24px; }
-      .about-block { max-width: 100%; }
+      .brand-tagline {
+        text-align: center;
+        max-width: none;
+      }
+      .page-wrap {
+        padding: 20px 14px 24px;
+      }
+      .about-block {
+        max-width: 100%;
+      }
+      .hero-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cta-row {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
@@ -227,17 +299,30 @@
   <main>
     <header>
       <div class="brand-title">Quiet Den Games</div>
+      <div class="brand-tagline">
+        Solo studio for sharp, atmospheric interactive projects.
+      </div>
     </header>
 
     <section class="hero" id="extension0">
       <div class="eyebrow">Interactive audio narrative · coming soon on itch.io</div>
 
-      <!-- Title + button on same row -->
       <div class="hero-head">
         <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
-        <a class="btn headline-cta" href="https://quietdengames.itch.io" target="_blank" rel="noopener">
-          Follow on itch.io
-        </a>
+
+        <div class="cta-row">
+          <a class="btn btn-primary"
+             href="https://quietdengames.itch.io/extension0"
+             target="_blank" rel="noopener">
+            View on itch.io
+          </a>
+
+          <!-- If you create play.html with the embed, this can point to it -->
+          <a class="btn btn-outline"
+             href="play.html">
+            Play in browser
+          </a>
+        </div>
       </div>
 
       <p class="hero-main">
@@ -251,7 +336,7 @@
       <div class="hero-meta">
         <span><strong>Audio first.</strong> One desk, one phone.</span>
         <span><strong>Single sitting.</strong> Around 45 minutes.</span>
-        <span><strong>Input.</strong> Simple number key choices.</span>
+        <span><strong>Input.</strong> Number key choices only.</span>
         <span><strong>Content warnings.</strong> Breath control, panic sensations, depersonalization.</span>
       </div>
     </section>
