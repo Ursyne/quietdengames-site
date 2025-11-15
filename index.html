@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quiet Den Games</title>
-  <meta name="description" content="Quiet Den Games is a solo developer of sharp, atmospheric interactive projects. Currently featuring The Interval Bureau: Extension 0, a branching audio narrative where workplace protocol meets cosmic intrusion.">
+  <meta name="description" content="Quiet Den Games is a solo developer of short, atmospheric interactive work. Currently featuring The Interval Bureau: Extension 0, a branching audio narrative where workplace protocol meets cosmic intrusion.">
   <meta name="theme-color" content="#050507">
 
   <!-- Open Graph -->
@@ -32,6 +32,7 @@
     :root {
       --bg: #050507;
       --panel: #08090b;
+      --panel-soft: #0b0c10;
       --accent: #e0b87a;
       --accent-soft: rgba(224,184,122,0.24);
       --text: #f5f3ec;
@@ -40,7 +41,7 @@
       --radius-xxl: 24px;
       --shadow-soft: 0 16px 40px rgba(0,0,0,0.72);
       --font-body: "Spectral", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --max-width: 820px;
+      --max-width: 860px;
       --transition-fast: 0.18s ease-out;
     }
 
@@ -53,13 +54,51 @@
       padding: 0;
       font-family: var(--font-body);
       font-size: 15px;
-      background:
-        radial-gradient(circle at top, #161823 0, #050507 55%, #020205 100%);
+      background-color: var(--bg);
       color: var(--text);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       scroll-behavior: smooth;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Atmospheric background layer */
+    .page-wrap::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 10% -10%, #141521 0, transparent 55%),
+        radial-gradient(circle at 90% 120%, #111018 0, transparent 60%),
+        radial-gradient(circle at center, #050507 0, #020205 70%);
+      opacity: 1;
+    }
+
+    .page-wrap::after {
+      content: "";
+      position: fixed;
+      inset: -20px;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          180deg,
+          rgba(255,255,255,0.04) 0,
+          rgba(255,255,255,0.04) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+      mix-blend-mode: soft-light;
+      opacity: 0.25;
+      animation: drift 18s infinite alternate;
+    }
+
+    @keyframes drift {
+      0% { transform: translate3d(0,0,0); }
+      100% { transform: translate3d(0,8px,0); }
     }
 
     .page-wrap {
@@ -91,14 +130,15 @@
     .brand-title {
       font-size: 24px;
       font-weight: 500;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--text);
     }
 
     .brand-tagline {
       font-size: 13px;
       color: var(--muted);
-      max-width: 360px;
+      max-width: 340px;
       line-height: 1.5;
     }
 
@@ -120,39 +160,41 @@
     }
 
     .hero {
-      position: relative;
       padding: 22px 20px 18px;
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
       background:
-        radial-gradient(circle at top, #121318 0, var(--panel) 55%, #050507 100%);
+        radial-gradient(circle at top, #171824 0, #0b0c10 55%, #050507 100%);
       box-shadow: var(--shadow-soft);
-      margin-bottom: 24px;
+      margin-bottom: 18px;
+      position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      border: 1px solid rgba(224,184,122,0.12);
-      opacity: 0.6;
-      pointer-events: none;
-    }
-
+    /* Subtle corner brackets */
+    .hero::before,
     .hero::after {
       content: "";
       position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(224,184,122,0.16), transparent 60%);
-      top: -80px;
-      right: -80px;
-      pointer-events: none;
-      mix-blend-mode: screen;
-      opacity: 0.7;
+      width: 26px;
+      height: 26px;
+      border-radius: 0;
+      border: 1px solid rgba(224,184,122,0.35);
+      opacity: 0.45;
+    }
+
+    .hero::before {
+      top: 10px;
+      left: 10px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .hero::after {
+      bottom: 10px;
+      right: 10px;
+      border-left: none;
+      border-top: none;
     }
 
     .eyebrow {
@@ -160,42 +202,31 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .hero-head {
-      position: relative;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
-      z-index: 1;
+      margin-bottom: 12px;
     }
 
     .hero-title {
       font-family: "Inter", var(--font-body);
       font-weight: 600;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       font-size: 26px;
       margin: 0;
       color: var(--text);
-    }
-
-    .hero-status {
-      font-size: 10px;
-      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 4px;
     }
 
     .hero-main {
-      position: relative;
       font-size: 14px;
       color: var(--text);
-      margin: 6px 0 14px;
-      z-index: 1;
+      margin: 0 0 14px;
     }
 
     .hero-main span {
@@ -203,15 +234,21 @@
       margin-bottom: 4px;
     }
 
+    .hero-main span:first-child {
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
     .hero-meta {
-      position: relative;
       font-size: 12px;
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
       gap: 8px 18px;
       margin-top: 4px;
-      z-index: 1;
     }
 
     .hero-meta span strong {
@@ -278,6 +315,7 @@
       cursor: default;
       pointer-events: none;
       border-style: dashed;
+      color: var(--muted);
     }
 
     .btn-disabled:hover {
@@ -288,14 +326,49 @@
       color: var(--muted);
     }
 
+    /* Status strip under hero */
+    .status-strip {
+      margin: 6px 4px 20px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background-color: rgba(5,5,7,0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      backdrop-filter: blur(4px);
+    }
+
+    .status-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 9px;
+      color: var(--accent);
+    }
+
+    .status-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(224,184,122,0.6);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .status-meta span {
+      opacity: 0.9;
+    }
+
     .about-block {
       margin-top: 10px;
-      padding: 18px 18px 14px;
+      padding: 18px 18px 16px;
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
-      background-color: var(--panel);
+      background-color: var(--panel-soft);
       box-shadow: var(--shadow-soft);
-      max-width: 520px;
+      max-width: 540px;
     }
 
     .about-block h2 {
@@ -377,6 +450,10 @@
       .cta-row {
         margin-left: 0;
       }
+
+      .status-strip {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
@@ -387,24 +464,22 @@
       <div class="brand-group">
         <div class="brand-title">Quiet Den Games</div>
         <div class="brand-tagline">
-          Soft-spoken games about strange systems and the people caught inside them.
+          A small den for short, atmospheric interactive work.
+          Strange calls, focused runtimes, no filler.
         </div>
       </div>
       <nav class="site-nav">
-        <a href="#extension0">Line</a>
-        <a href="#about">Studio</a>
+        <a href="#extension0">Game</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <section class="hero" id="extension0">
-      <div class="eyebrow">Audio hotline · workplace surrealism</div>
+      <div class="eyebrow">The Interval Bureau · Interactive audio narrative</div>
 
       <div class="hero-head">
-        <div>
-          <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
-          <div class="hero-status">Line: active · Extension: 0</div>
-        </div>
+        <h1 class="hero-title">Extension 0</h1>
 
         <div class="cta-row">
           <a class="btn btn-primary"
@@ -416,7 +491,7 @@
           <a class="btn btn-outline btn-disabled"
              href="#"
              aria-disabled="true">
-            Steam page (coming soon)
+            Steam page (not yet online)
           </a>
         </div>
       </div>
@@ -424,32 +499,38 @@
       <p class="hero-main">
         <span>The Interval Bureau is listening.</span>
         <span>
-          An audio hotline where workplace protocol, breathing drills, and something older than the company share the same line.
-        </span>
-        <span>
-          Navigate strange menus, enforced breathing exercises, and controlled scenarios that bend cause and effect.
+          A branching audio narrative about a help line that stops feeling human.
+          Navigate scripted menus, enforced breathing drills, and controlled scenarios
+          that quietly rearrange cause and effect.
         </span>
       </p>
 
       <div class="hero-meta">
-        <span><strong>Audio first.</strong> One desk, one phone, everything else in your head.</span>
-        <span><strong>Single sitting.</strong> About 45 minutes, designed to be finished in one go.</span>
-        <span><strong>Input.</strong> Number keys only; every pause is counted.</span>
+        <span><strong>Audio first.</strong> One desk, one phone, no camera cuts.</span>
+        <span><strong>Single sitting.</strong> Around 45 minutes, multiple routes.</span>
+        <span><strong>Input.</strong> Number keys only, like dialing a real system.</span>
         <span><strong>Content warnings.</strong> Breath control, panic sensations, depersonalization.</span>
       </div>
     </section>
 
+    <div class="status-strip">
+      <span class="status-label">Line status</span>
+      <span class="status-pill">Intermittent</span>
+      <span class="status-meta">Last confirmed caller: <span>not on record</span></span>
+    </div>
+
     <section id="about" class="about-block">
-      <h2>File: Quiet Den Games</h2>
+      <h2>About Quiet Den Games</h2>
       <p>
-        Quiet Den Games is a one-person studio for short, atmospheric interactive projects:
-        small runtimes, focused writing, and too much attention paid to sound. Expect a handful
-        of strange lines, odd systems, and games that feel like you dialed the wrong number and stayed on anyway.
+        Quiet Den Games is a one-person studio for small, focused experiments:
+        short sessions, specific moods, and systems that lean a little strange.
+        Projects skew narrative and atmospheric, but they are always trying a new shape,
+        whether that is a phone call that loops wrong or a board of shifting tiles.
       </p>
     </section>
 
     <footer id="contact">
-      <p>For any inquiries: <a href="mailto:contact@quietdengames.com">contact@quietdengames.com</a></p>
+      <p>For press, questions, or keys: <a href="mailto:contact@quietdengames.com">contact@quietdengames.com</a></p>
       <p>© <span id="year"></span> Quiet Den Games. All rights reserved.</p>
     </footer>
   </main>
