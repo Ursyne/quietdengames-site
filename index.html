@@ -78,11 +78,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;   /* tighter gap above hero */
     }
 
     .logo-hero img {
-      width: min(40vw, 360px);
+      width: min(32vw, 300px);  /* slightly smaller logo */
       height: auto;
       display: block;
       filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.85));
@@ -90,7 +90,7 @@
 
     .hero {
       position: relative;
-      padding: 22px 20px 18px;
+      padding: 18px 20px 18px;  /* reduced top padding to pull hero up */
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
       background:
@@ -322,11 +322,11 @@
 
       .logo-hero {
         padding: 0 0 4px;   /* no top padding */
-        margin-bottom: 12px;
+        margin-bottom: 8px;
       }
 
       .logo-hero img {
-        width: min(70vw, 320px);
+        width: min(60vw, 260px);  /* smaller on mobile too */
       }
 
       .about-block {
