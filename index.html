@@ -82,7 +82,7 @@
     }
 
     .logo-hero img {
-      width: min(32vw, 300px);  /* slightly smaller logo */
+      width: min(32vw, 300px);
       height: auto;
       display: block;
       filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.85));
@@ -90,7 +90,7 @@
 
     .hero {
       position: relative;
-      padding: 18px 20px 18px;  /* reduced top padding to pull hero up */
+      padding: 18px 20px 18px;
       border-radius: var(--radius-xxl);
       border: 1px solid var(--border-subtle);
       background:
@@ -136,9 +136,8 @@
       position: relative;
       display: flex;
       align-items: flex-start;
-      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       z-index: 1;
     }
 
@@ -164,7 +163,6 @@
       margin-bottom: 4px;
     }
 
-    /* Tagline style to make it pop */
     .hero-tagline {
       position: relative;
       font-family: "Inter", var(--font-body);
@@ -172,7 +170,17 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      margin: 10px 0 6px;
+      margin: 8px 0 4px;
+      z-index: 1;
+    }
+
+    .cta-row {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 6px;
       z-index: 1;
     }
 
@@ -190,13 +198,6 @@
     .hero-meta span strong {
       color: var(--accent);
       font-weight: 600;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-left: auto;
     }
 
     a.btn {
@@ -244,21 +245,6 @@
       border-color: var(--accent);
       box-shadow: var(--shadow-soft);
       transform: translateY(-1px);
-    }
-
-    .btn-disabled {
-      opacity: 0.45;
-      cursor: default;
-      pointer-events: none;
-      border-style: dashed;
-    }
-
-    .btn-disabled:hover {
-      transform: none;
-      box-shadow: none;
-      background: transparent;
-      border-color: var(--accent-soft);
-      color: var(--muted);
     }
 
     .about-block {
@@ -317,16 +303,16 @@
 
     @media (max-width: 840px) {
       .page-wrap {
-        padding: 0 14px 24px; /* no top padding on mobile either */
+        padding: 0 14px 24px;
       }
 
       .logo-hero {
-        padding: 0 0 4px;   /* no top padding */
+        padding: 0 0 4px;
         margin-bottom: 8px;
       }
 
       .logo-hero img {
-        width: min(60vw, 260px);  /* smaller on mobile too */
+        width: min(60vw, 260px);
       }
 
       .about-block {
@@ -339,7 +325,7 @@
       }
 
       .cta-row {
-        margin-left: 0;
+        justify-content: flex-start;
       }
     }
   </style>
@@ -350,7 +336,6 @@
 
     <!-- LOGO SPLASH -->
     <section class="logo-hero">
-      <!-- Update the src to match where you put the image -->
       <img src="assets/placeholder-logo.png" alt="Quiet Den Games logo">
     </section>
 
@@ -359,20 +344,6 @@
 
       <div class="hero-head">
         <h1 class="hero-title">The Interval Bureau: Extension 0</h1>
-
-        <div class="cta-row">
-          <a class="btn btn-primary"
-             href="https://quietdengames.itch.io/extension0"
-             target="_blank" rel="noopener">
-            Play in browser on itch.io · Coming soon
-          </a>
-
-          <a class="btn btn-outline"
-             href="https://store.steampowered.com/app/4192270/The_Interval_Bureau_Extension_0/"
-             target="_blank" rel="noopener">
-            Wishlist on Steam · Coming early 2026
-          </a>
-        </div>
       </div>
 
       <p class="hero-main">
@@ -384,6 +355,20 @@
 
       <div class="hero-tagline">
         The Interval Bureau is listening.
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary"
+           href="https://store.steampowered.com/app/4192270/The_Interval_Bureau_Extension_0/"
+           target="_blank" rel="noopener">
+          Wishlist on Steam · Coming early 2026
+        </a>
+
+        <a class="btn btn-outline"
+           href="https://quietdengames.itch.io/extension0"
+           target="_blank" rel="noopener">
+          Play in browser on itch.io · Coming soon
+        </a>
       </div>
 
       <div class="hero-meta">
