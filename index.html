@@ -63,7 +63,7 @@
 
     .page-wrap {
       min-height: 100vh;
-      padding: 0 20px 32px;
+      padding: 12px 20px 32px;
     }
 
     main {
@@ -72,20 +72,76 @@
       margin: 0 auto;
     }
 
-    .logo-hero {
-      padding: 0 0 8px;
+    /* HEADER / BRAND BAR */
+
+    .site-header {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto 12px;
+      padding: 6px 0 4px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 8px;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .logo-hero img {
-      width: min(32vw, 300px);
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-lockup img {
+      width: 40px;
       height: auto;
       display: block;
-      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.85));
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.9));
     }
+
+    .site-title-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .site-name {
+      font-family: "Inter", var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .site-tagline {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+    }
+
+    .site-nav a:hover {
+      color: var(--accent);
+      border-color: rgba(224,184,122,0.6);
+    }
+
+    /* HERO */
 
     .hero {
       position: relative;
@@ -232,6 +288,8 @@
       transform: translateY(-1px);
     }
 
+    /* ABOUT */
+
     .about-block {
       margin-top: 10px;
       padding: 18px 18px 14px;
@@ -288,16 +346,19 @@
 
     @media (max-width: 840px) {
       .page-wrap {
-        padding: 0 14px 24px;
+        padding: 8px 14px 24px;
       }
 
-      .logo-hero {
-        padding: 0 0 4px;
-        margin-bottom: 8px;
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 10px;
       }
 
-      .logo-hero img {
-        width: min(60vw, 260px);
+      .site-nav {
+        gap: 12px;
+        font-size: 10px;
       }
 
       .about-block {
@@ -317,12 +378,24 @@
 </head>
 <body>
 <div class="page-wrap">
-  <main>
 
-    <!-- LOGO SPLASH -->
-    <section class="logo-hero">
-      <img src="assets/placeholder-logo.png" alt="Quiet Den Games logo">
-    </section>
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="logo-lockup">
+      <img src="assets/placeholder-logo.png" alt="Quiet Den logo">
+      <div class="site-title-text">
+        <span class="site-name">Quiet Den Games</span>
+        <span class="site-tagline">Sharp, atmospheric interactive projects.</span>
+      </div>
+    </div>
+    <nav class="site-nav">
+      <a href="#extension0">Games</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
 
     <section class="hero" id="extension0">
       <div class="eyebrow">Interactive audio narrative · Coming February 2026</div>
