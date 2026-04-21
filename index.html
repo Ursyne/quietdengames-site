@@ -437,41 +437,9 @@
       text-wrap: balance;
     }
 
-    .hero-panel p,
-    .detail-list p {
+    .hero-panel p {
       margin: 0;
       color: var(--muted);
-    }
-
-    .detail-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .detail-list article {
-      padding: 14px;
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .detail-list span {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent-cool);
-    }
-
-    .detail-list strong {
-      display: block;
-      font-size: 0.98rem;
-      line-height: 1.45;
-      color: var(--text);
-      font-weight: 600;
     }
 
     .footer-panel {
@@ -511,7 +479,6 @@
       padding: 0 18px;
       border-radius: 999px;
       border: 1px solid rgba(255, 241, 225, 0.16);
-      text-decoration: none;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -613,10 +580,6 @@
         font-size: clamp(2.9rem, 13vw, 4.8rem);
       }
 
-      .detail-list {
-        grid-template-columns: 1fr;
-      }
-
       .footer-panel {
         flex-direction: column;
         align-items: flex-start;
@@ -678,8 +641,8 @@
             <p class="panel-label">Featured release</p>
             <h2 id="featured-title">The Interval Bureau: Extension 0</h2>
             <p>
-              A branching audio narrative where office procedure collides with something
-              wider, older, and impossible to file away.
+              A short psychological audio horror call where every number routes you
+              deeper into a faceless bureau that measures and files you.
             </p>
 
             <div class="hero-actions">
@@ -700,25 +663,6 @@
                 Play on itch.io
               </a>
             </div>
-
-            <div class="detail-list" aria-label="Featured game details">
-              <article>
-                <span>Format</span>
-                <strong>Audio-first narrative</strong>
-              </article>
-              <article>
-                <span>Runtime</span>
-                <strong>Around 45 minutes</strong>
-              </article>
-              <article>
-                <span>Input</span>
-                <strong>Simple number-key choices</strong>
-              </article>
-              <article>
-                <span>Warnings</span>
-                <strong>Breath control, panic sensations, depersonalization</strong>
-              </article>
-            </div>
           </aside>
         </div>
       </section>
@@ -732,7 +676,7 @@
           <span>For press, contact, or general inquiries.</span>
         </div>
 
-        <a class="contact-link" href="mailto:contact@quietdengames.com">contact@quietdengames.com</a>
+        <span class="contact-link" aria-label="Email address">contact[at]quietdengames.com</span>
 
         <p class="copyright">&copy; <span id="year"></span> Quiet Den Games</p>
       </div>
