@@ -6,7 +6,7 @@
   <title>Quiet Den Games</title>
   <meta
     name="description"
-    content="Quiet Den Games makes compact, atmospheric interactive projects with sharp writing, unusual structures, and moods that linger. Currently featuring The Interval Bureau: Extension 0."
+    content="Quiet Den Games makes short, atmospheric interactive projects. Currently featuring The Interval Bureau: Extension 0."
   >
   <meta name="theme-color" content="#0a121a">
 
@@ -14,7 +14,7 @@
   <meta property="og:title" content="Quiet Den Games">
   <meta
     property="og:description"
-    content="Compact, eerie, writer-led interactive projects. Currently featuring The Interval Bureau: Extension 0."
+    content="Short, atmospheric interactive projects. Currently featuring The Interval Bureau: Extension 0."
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quietdengames.com">
@@ -25,7 +25,7 @@
   <meta name="twitter:title" content="Quiet Den Games">
   <meta
     name="twitter:description"
-    content="Compact, eerie, writer-led interactive projects. Currently featuring The Interval Bureau: Extension 0."
+    content="Short, atmospheric interactive projects. Currently featuring The Interval Bureau: Extension 0."
   >
   <meta name="twitter:image" content="https://quietdengames.com/og-image.png">
 
@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
     rel="stylesheet"
   >
 
@@ -58,7 +58,7 @@
       --radius-lg: 24px;
       --radius-md: 18px;
       --max-width: 1180px;
-      --font-display: "Fraunces", Georgia, serif;
+      --font-display: "Sora", "Segoe UI", sans-serif;
       --font-ui: "Space Grotesk", "Segoe UI", sans-serif;
       --transition-fast: 180ms ease;
       --transition-slow: 260ms ease;
@@ -198,22 +198,23 @@
     .brand-copy {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
       min-width: 0;
     }
 
     .brand-name {
-      font-size: 11px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 1.16rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text);
     }
 
     .brand-tag {
-      font-family: var(--font-display);
-      font-size: 1.18rem;
-      color: var(--text);
-      white-space: nowrap;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .site-nav {
@@ -296,13 +297,14 @@
     .hero-copy,
     .hero-panel,
     .studio-card,
-    .principles-card,
-    .signal-strip,
     .site-footer {
       padding: 30px;
     }
 
     .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       background:
         radial-gradient(circle at top left, rgba(133, 181, 195, 0.16), transparent 34%),
         linear-gradient(160deg, rgba(217, 166, 110, 0.06), transparent 48%),
@@ -311,18 +313,18 @@
 
     .hero-title {
       margin: 0;
-      max-width: 11ch;
+      max-width: 10ch;
       font-family: var(--font-display);
-      font-size: clamp(3.2rem, 7vw, 6.2rem);
-      line-height: 0.93;
-      letter-spacing: -0.05em;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
       text-wrap: balance;
     }
 
     .hero-lede {
-      max-width: 38rem;
-      margin: 20px 0 0;
-      font-size: clamp(1rem, 1.8vw, 1.16rem);
+      max-width: 32rem;
+      margin: 18px 0 0;
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
       color: var(--muted);
     }
 
@@ -331,6 +333,10 @@
       flex-wrap: wrap;
       gap: 12px;
       margin: 28px 0 30px;
+    }
+
+    .hero-panel .cta-row {
+      margin: 22px 0 18px;
     }
 
     .btn {
@@ -380,33 +386,22 @@
       background: rgba(217, 166, 110, 0.08);
     }
 
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
     }
 
-    .highlight-card {
-      padding: 16px;
-      border-radius: var(--radius-md);
+    .hero-point {
+      padding: 10px 14px;
+      border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       background: rgba(255, 255, 255, 0.03);
-    }
-
-    .highlight-card span {
-      display: block;
-      margin-bottom: 6px;
       font-size: 11px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent-cool);
-    }
-
-    .highlight-card strong {
-      display: block;
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text);
+      color: var(--muted);
     }
 
     .hero-panel {
@@ -445,10 +440,11 @@
       margin: 0;
       color: var(--muted);
       font-size: 1rem;
+      max-width: 32ch;
     }
 
     .info-grid {
-      margin: 24px 0 0;
+      margin: 10px 0 0;
     }
 
     .info-row {
@@ -478,102 +474,24 @@
       color: var(--text);
     }
 
-    .panel-tagline {
-      margin: 20px 0 0;
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .studio-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.03fr) minmax(0, 0.97fr);
-      gap: 24px;
+    .studio-card {
       margin-bottom: 24px;
     }
 
-    .studio-card h2,
-    .signal-strip h2 {
+    .studio-card h2 {
       margin: 0 0 16px;
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
       text-wrap: balance;
     }
 
     .studio-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 40rem;
-    }
-
-    .studio-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .principles {
-      display: grid;
-      gap: 16px;
-      margin-top: 22px;
-    }
-
-    .principle {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 14px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .principle:first-child {
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .principle-index {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      flex: 0 0 42px;
-      background: rgba(217, 166, 110, 0.12);
-      color: var(--accent);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .principle h3 {
-      margin: 0 0 6px;
-      font-size: 1.04rem;
-      color: var(--text);
-    }
-
-    .principle p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .signal-strip {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-      gap: 24px;
-      align-items: end;
-      margin-bottom: 24px;
-      background:
-        linear-gradient(135deg, rgba(133, 181, 195, 0.11), rgba(217, 166, 110, 0.08)),
-        rgba(10, 15, 22, 0.88);
-    }
-
-    .signal-strip p {
       margin: 0;
       color: var(--muted);
       font-size: 1rem;
+      max-width: 44rem;
     }
 
     .site-footer {
@@ -586,9 +504,10 @@
 
     .contact-link {
       display: inline-block;
-      margin: 0 0 10px;
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+      margin: 0;
+      font-family: var(--font-ui);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-weight: 700;
       line-height: 1.1;
       text-decoration: none;
       transition: color var(--transition-fast);
@@ -598,7 +517,6 @@
       color: var(--accent-strong);
     }
 
-    .footer-note,
     .copyright {
       margin: 0;
       color: var(--muted);
@@ -659,22 +577,12 @@
         justify-content: flex-start;
       }
 
-      .hero,
-      .studio-grid,
-      .signal-strip {
+      .hero {
         grid-template-columns: 1fr;
       }
 
       .hero-title {
         max-width: 12ch;
-      }
-
-      .hero-highlights {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .signal-strip {
-        align-items: start;
       }
 
       .site-footer {
@@ -692,8 +600,6 @@
       .hero-copy,
       .hero-panel,
       .studio-card,
-      .principles-card,
-      .signal-strip,
       .site-footer {
         padding: 24px 22px;
       }
@@ -703,20 +609,14 @@
         gap: 16px;
       }
 
-      .brand-tag {
-        white-space: normal;
-      }
-
-      .hero-highlights {
-        grid-template-columns: 1fr;
+      .hero-points {
+        gap: 8px;
       }
 
       .info-row {
         grid-template-columns: 1fr;
         gap: 6px;
       }
-
-      .footer-note,
       .copyright {
         font-size: 0.92rem;
       }
@@ -750,7 +650,7 @@
         </div>
         <div class="brand-copy">
           <span class="brand-name">Quiet Den Games</span>
-          <span class="brand-tag">Atmospheric games with a sharper aftertaste.</span>
+          <span class="brand-tag">Independent game studio</span>
         </div>
       </a>
 
@@ -764,12 +664,26 @@
     <main id="top">
       <section class="hero" id="extension0">
         <div class="hero-copy panel reveal delay-2">
-          <p class="section-label">Independent narrative experiments</p>
-          <h1 class="hero-title">Quiet, strange, and built to linger.</h1>
-          <p class="hero-lede">
-            Quiet Den Games makes compact interactive projects shaped by atmosphere,
-            precise writing, and the kind of ideas that hit harder when they are allowed
-            to stay focused.
+          <div>
+            <h1 class="hero-title">Short games. Strange moods.</h1>
+            <p class="hero-lede">
+              Quiet Den Games makes focused interactive projects with sharp writing,
+              short runtimes, and a taste for the uncanny.
+            </p>
+          </div>
+
+          <div class="hero-points" aria-label="Studio focus">
+            <span class="hero-point">Narrative-led</span>
+            <span class="hero-point">Built for one sitting</span>
+            <span class="hero-point">More releases coming</span>
+          </div>
+        </div>
+
+        <aside class="hero-panel panel reveal delay-3" aria-labelledby="featured-title">
+          <p class="section-label">Featured release</p>
+          <h2 class="featured-title" id="featured-title">The Interval Bureau: Extension 0</h2>
+          <p class="featured-copy">
+            A branching audio narrative where workplace protocol meets cosmic intrusion.
           </p>
 
           <div class="cta-row">
@@ -791,31 +705,6 @@
             </a>
           </div>
 
-          <div class="hero-highlights">
-            <article class="highlight-card">
-              <span>Short runtimes</span>
-              <strong>Built to land in a single sitting, not wear out its welcome.</strong>
-            </article>
-            <article class="highlight-card">
-              <span>Writer led</span>
-              <strong>Narrative tension, texture, and voice stay at the center.</strong>
-            </article>
-            <article class="highlight-card">
-              <span>Experimental</span>
-              <strong>Each release is trying a new structure, format, or mood.</strong>
-            </article>
-          </div>
-        </div>
-
-        <aside class="hero-panel panel reveal delay-3" aria-labelledby="featured-title">
-          <p class="section-label">Featured release</p>
-          <h2 class="featured-title" id="featured-title">The Interval Bureau: Extension 0</h2>
-          <p class="featured-copy">
-            A branching audio narrative where workplace protocol meets cosmic intrusion.
-            Navigate impossible phone trees, enforced breathing exercises, and tightly
-            managed scenarios that slip beyond human control.
-          </p>
-
           <dl class="info-grid">
             <div class="info-row">
               <dt>Format</dt>
@@ -834,75 +723,23 @@
               <dd>Breath control, panic sensations, and depersonalization</dd>
             </div>
           </dl>
-
-          <p class="panel-tagline">The Interval Bureau is listening.</p>
         </aside>
       </section>
 
-      <section class="studio-grid">
-        <article class="studio-card panel reveal delay-3" id="about">
-          <p class="section-label">About the studio</p>
-          <h2>Small games. Dense moods. No wasted runtime.</h2>
-          <p>
-            Quiet Den Games is a one-person studio making interactive work with a sharp
-            edge: compact projects, strong atmosphere, and writing that knows when to
-            whisper instead of explain.
-          </p>
-          <p>
-            The catalog grows through experiments rather than formulas. Most releases lean
-            narrative, all of them chase a distinct feeling, and each one is trying to do
-            at least one thing it has not done before.
-          </p>
-        </article>
-
-        <article class="principles-card panel reveal delay-4">
-          <p class="section-label">What to expect</p>
-          <div class="principles">
-            <div class="principle">
-              <div class="principle-index">01</div>
-              <div>
-                <h3>Short by design</h3>
-                <p>The experience ends before the atmosphere has time to thin out.</p>
-              </div>
-            </div>
-            <div class="principle">
-              <div class="principle-index">02</div>
-              <div>
-                <h3>Atmosphere first</h3>
-                <p>Sound, writing, and restraint do as much work as plot or mechanics.</p>
-              </div>
-            </div>
-            <div class="principle">
-              <div class="principle-index">03</div>
-              <div>
-                <h3>Curious structure</h3>
-                <p>Each project is free to become whatever shape best serves the idea.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="signal-strip panel reveal delay-5" aria-label="Studio statement">
-        <div>
-          <p class="section-label">Studio signal</p>
-          <h2>A growing collection of eerie, concentrated, writer-led experiments.</h2>
-        </div>
+      <section class="studio-card panel reveal delay-4" id="about">
+        <p class="section-label">About</p>
+        <h2>Solo developed. Atmosphere first.</h2>
         <p>
-          For players who want interactive projects with texture, control, and just enough
-          static in the walls to feel unfamiliar.
+          Quiet Den Games is a solo studio making compact, narrative-leaning projects with
+          distinct moods and short runtimes. More games are on the way.
         </p>
       </section>
 
       <footer class="site-footer panel reveal delay-5" id="contact">
         <div>
-          <p class="section-label">Contact</p>
           <a class="contact-link" href="mailto:contact@quietdengames.com">
             contact@quietdengames.com
           </a>
-          <p class="footer-note">
-            Press, collaborations, and general inquiries are always welcome.
-          </p>
         </div>
         <p class="copyright">&copy; <span id="year"></span> Quiet Den Games</p>
       </footer>
