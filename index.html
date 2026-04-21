@@ -382,18 +382,7 @@
       background: rgba(255, 208, 173, 0.08);
     }
 
-    .hero-note {
-      margin-top: 20px;
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255, 241, 225, 0.66);
-    }
-
     .hero-panel,
-    .section-card,
-    .gallery-card,
-    .manifesto,
     .about-card,
     .footer-panel {
       position: relative;
@@ -408,9 +397,6 @@
     }
 
     .hero-panel::before,
-    .section-card::before,
-    .gallery-card::before,
-    .manifesto::before,
     .about-card::before,
     .footer-panel::before {
       content: "";
@@ -445,8 +431,6 @@
     }
 
     .hero-panel h2,
-    .section-heading,
-    .manifesto-heading,
     .about-heading {
       margin: 0;
       font-family: var(--font-display);
@@ -457,8 +441,6 @@
     }
 
     .hero-panel p,
-    .section-copy,
-    .manifesto-copy,
     .about-copy,
     .detail-list p {
       margin: 0;
@@ -496,176 +478,29 @@
       font-weight: 600;
     }
 
-    .content-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.94fr);
-      gap: 22px;
-      margin-bottom: 22px;
-    }
-
-    .section-card,
-    .gallery-card,
-    .manifesto,
     .about-card,
     .footer-panel {
       padding: clamp(22px, 4vw, 30px);
     }
 
-    .section-card {
-      min-height: 100%;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
-        linear-gradient(150deg, rgba(178, 214, 205, 0.08), transparent 42%),
-        var(--panel-strong);
-    }
-
-    .section-intro {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 20px;
-      max-width: 46rem;
-    }
-
-    .story-points {
-      display: grid;
-      gap: 12px;
-    }
-
-    .story-points article {
-      display: grid;
-      grid-template-columns: 92px minmax(0, 1fr);
-      gap: 16px;
-      align-items: start;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .story-points span {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent-strong);
-    }
-
-    .story-points strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .gallery-card {
-      display: grid;
-      gap: 16px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
-        linear-gradient(180deg, rgba(240, 143, 109, 0.06), transparent 48%),
-        rgba(12, 11, 11, 0.92);
-    }
-
-    .gallery-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .gallery-tile {
-      position: relative;
-      min-height: 210px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(255, 241, 225, 0.1);
-      background-color: #101010;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-    }
-
-    .gallery-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition:
-        transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-        filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .gallery-tile:hover img {
-      transform: scale(1.04);
-      filter: saturate(1.06);
-    }
-
-    .gallery-caption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 18px 18px 16px;
-      background: linear-gradient(180deg, transparent, rgba(8, 8, 8, 0.9));
-    }
-
-    .gallery-caption strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .gallery-caption span {
-      color: rgba(246, 239, 228, 0.78);
-      font-size: 0.93rem;
-    }
-
-    .manifesto-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 22px;
-      margin-bottom: 22px;
-    }
-
-    .manifesto {
-      min-height: 100%;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.012)),
-        url("assets/Extension0/river_7.png") center center / cover no-repeat;
-    }
-
-    .manifesto::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8, 8, 8, 0.18), rgba(8, 8, 8, 0.72)),
-        linear-gradient(120deg, rgba(8, 8, 8, 0.64), rgba(8, 8, 8, 0.22));
-      pointer-events: none;
-    }
-
-    .manifesto-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      align-content: end;
-      gap: 16px;
-      min-height: 100%;
-      max-width: 34rem;
-    }
-
     .about-card {
       display: grid;
-      gap: 18px;
+      gap: 14px;
       align-content: start;
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.012)),
         linear-gradient(130deg, rgba(240, 143, 109, 0.08), transparent 42%),
         rgba(14, 12, 12, 0.94);
+      margin-bottom: 22px;
     }
 
     .about-list {
       display: grid;
-      gap: 14px;
+      gap: 12px;
     }
 
     .about-list article {
-      padding-top: 14px;
+      padding-top: 12px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -695,7 +530,7 @@
     }
 
     .footer-copy strong {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       letter-spacing: -0.02em;
     }
 
@@ -770,9 +605,7 @@
         border-radius: 28px;
       }
 
-      .hero-grid,
-      .content-grid,
-      .manifesto-grid {
+      .hero-grid {
         grid-template-columns: 1fr;
       }
 
@@ -802,9 +635,6 @@
       }
 
       .hero,
-      .section-card,
-      .gallery-card,
-      .manifesto,
       .about-card,
       .footer-panel {
         border-radius: 24px;
@@ -820,8 +650,7 @@
         font-size: clamp(2.9rem, 13vw, 4.8rem);
       }
 
-      .detail-list,
-      .story-points article {
+      .detail-list {
         grid-template-columns: 1fr;
       }
 
@@ -865,7 +694,6 @@
 
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#games">Featured Game</a>
-        <a href="#world">World</a>
         <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -901,8 +729,6 @@
                 Play on itch.io
               </a>
             </div>
-
-            <p class="hero-note">Narrative-led. Built for one sitting. Designed to linger.</p>
           </div>
 
           <aside class="hero-panel reveal delay-3" id="games" aria-labelledby="featured-title">
@@ -935,111 +761,28 @@
         </div>
       </section>
 
-      <section class="content-grid">
-        <article class="section-card reveal delay-3" aria-labelledby="current-signal-title">
-          <div class="section-intro">
-            <p class="section-label">Current signal</p>
-            <h2 class="section-heading" id="current-signal-title">A focused descent into dread, ritual, and workplace survival.</h2>
-            <p class="section-copy">
-              The current Quiet Den Games project sits somewhere between hotline, confession,
-              and emergency procedure. It is built to be short, sharp, and immersive from the
-              first minute instead of warming up slowly.
-            </p>
-          </div>
-
-          <div class="story-points">
-            <article>
-              <span>Tone</span>
-              <div>
-                <strong>Corporate horror without the safety blanket</strong>
-                <p>The interface is simple. The implications are not.</p>
-              </div>
-            </article>
-            <article>
-              <span>Structure</span>
-              <div>
-                <strong>Branching dialogue made to feel immediate</strong>
-                <p>Short playtime, clear interaction, and choices that keep pressure on the player.</p>
-              </div>
-            </article>
-            <article>
-              <span>Intent</span>
-              <div>
-                <strong>Memorable experiences over maximal scope</strong>
-                <p>Each project aims for a strong voice and a distinct emotional texture rather than endless runtime.</p>
-              </div>
-            </article>
-          </div>
-        </article>
-
-        <aside class="gallery-card reveal delay-4" id="world" aria-labelledby="world-title">
-          <p class="section-label">World fragments</p>
-          <h2 class="section-heading" id="world-title">Moments from inside the line.</h2>
-
-          <div class="gallery-grid">
-            <figure class="gallery-tile">
-              <img src="assets/Extension0/scanner_1.png" alt="Telephone scene lit by static blue light">
-              <figcaption class="gallery-caption">
-                <strong>Signal drift</strong>
-                <span>Cold instruction, late hours, no safe script.</span>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-tile">
-              <img src="assets/Extension0/river_7.png" alt="Telephone scene lit in red with heavy shadow">
-              <figcaption class="gallery-caption">
-                <strong>Emergency protocol</strong>
-                <span>Urgency, ritual, and the wrong kind of calm.</span>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-tile">
-              <img src="assets/Extension0/river_4.png" alt="Telephone on a desk with dark grain and white text">
-              <figcaption class="gallery-caption">
-                <strong>What waits underneath</strong>
-                <span>A quieter image, but not a gentler one.</span>
-              </figcaption>
-            </figure>
-          </div>
-        </aside>
-      </section>
-
-      <section class="manifesto-grid">
-        <article class="manifesto reveal delay-3">
-          <div class="manifesto-content">
-            <p class="section-label">Studio direction</p>
-            <h2 class="manifesto-heading">Quiet Den Games is interested in dread you can almost mistake for intimacy.</h2>
-            <p class="manifesto-copy">
-              The studio focus is on shorter works with a strong point of view: unsettling,
-              story-first, and comfortable leaving a few questions unanswered.
-            </p>
-          </div>
-        </article>
-
-        <article class="about-card reveal delay-4" id="about">
-          <p class="section-label">About the studio</p>
-          <h2 class="about-heading">A solo studio building compact, atmospheric projects.</h2>
+      <section class="about-card reveal delay-4" id="about">
+          <p class="section-label">Studio</p>
+          <h2 class="about-heading">A solo studio making short, atmospheric interactive projects.</h2>
           <p class="about-copy">
-            Quiet Den Games favors concise runtimes, sharp narrative framing, and visual
-            identities that feel specific to each project. The work is meant to be approachable
-            to start and difficult to shake once it ends.
+            Quiet Den Games makes compact narrative work with sharp moods, concise runtimes,
+            and a taste for the uncanny.
           </p>
 
           <div class="about-list">
             <article>
-              <span>What matters most</span>
-              <p>Distinct mood, intentional pacing, and choices that support the fiction instead of distracting from it.</p>
+              <span>Focus</span>
+              <p>Distinct atmosphere, clear interaction, and stories that stay specific.</p>
             </article>
             <article>
-              <span>Player promise</span>
-              <p>A complete experience in one sitting, with enough texture to reward a second look.</p>
+              <span>Approach</span>
+              <p>Small in scope, deliberate in tone, and built to feel complete in one sitting.</p>
             </article>
             <article>
-              <span>Where to find the work</span>
-              <p>Current releases live on Steam and itch.io, with more strange signals to follow.</p>
+              <span>Now playing</span>
+              <p>The Interval Bureau: Extension 0 is available on Steam and itch.io.</p>
             </article>
           </div>
-        </article>
       </section>
     </main>
 
