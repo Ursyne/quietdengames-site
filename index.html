@@ -286,25 +286,9 @@
 
     .hero-copy {
       max-width: 720px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent-strong);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 42px;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), var(--accent));
+      align-self: center;
+      justify-self: center;
+      text-align: center;
     }
 
     .hero-title {
@@ -327,6 +311,8 @@
       max-width: 38rem;
       font-size: 1.06rem;
       color: var(--muted);
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-actions {
@@ -630,7 +616,6 @@
       <section class="hero reveal delay-2" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Quiet Den Games</p>
             <h1 class="hero-title" id="hero-title">Small games with a long <em>afterimage</em>.</h1>
             <p>
               Quiet Den Games makes compact narrative experiences that feel intimate,
